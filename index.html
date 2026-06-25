@@ -5,47 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#2F4A3D">
 <title>TrashToCash — Tabungan Sampah Sekolah</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
 <style>
 :root{
-  --kraft:#EFE7D6; --kraft-2:#E7DCC2; --paper:#FBF8F0;
-  --ink:#2B2A24; --ink-soft:#5B5A4E;
-  --forest:#2F4A3D; --forest-dark:#203329;
-  --moss:#7C9473; --moss-soft:#DCE6D4;
-  --clay:#BD6B3D; --clay-dark:#9C5530;
+  --kraft:#EFE7D6;--kraft-2:#E7DCC2;--paper:#FBF8F0;
+  --ink:#2B2A24;--ink-soft:#5B5A4E;
+  --forest:#2F4A3D;--forest-dark:#203329;
+  --moss:#7C9473;--moss-soft:#DCE6D4;
+  --clay:#BD6B3D;--clay-dark:#9C5530;
   --stamp:#8B3A3A;
-  --gold:#B8973A; --gold-soft:#F5EED4;
-  --pending:#8C6B1A; --pending-soft:#FFF4D4;
-  --ditolak:#8B3A3A; --ditolak-soft:#FDEAEA;
-  --aktif:#2F4A3D; --aktif-soft:#DCE6D4;
-  --line:rgba(43,42,36,0.16); --line-soft:rgba(43,42,36,0.09);
-  --radius:16px; --radius-sm:10px;
-  --shadow:0 10px 28px rgba(43,42,36,0.12); --shadow-sm:0 4px 12px rgba(43,42,36,0.08);
+  --gold:#B8973A;--gold-soft:#F5EED4;
+  --pending:#8C6B1A;--pending-soft:#FFF4D4;
+  --ditolak:#8B3A3A;--ditolak-soft:#FDEAEA;
+  --aktif:#2F4A3D;--aktif-soft:#DCE6D4;
+  --line:rgba(43,42,36,0.16);--line-soft:rgba(43,42,36,0.09);
+  --radius:16px;--radius-sm:10px;
+  --shadow:0 10px 28px rgba(43,42,36,0.12);--shadow-sm:0 4px 12px rgba(43,42,36,0.08);
   --f-display:'Fraunces',Georgia,serif;
   --f-mono:'Space Mono','Courier New',monospace;
   --f-body:'Work Sans',-apple-system,Segoe UI,sans-serif;
 }
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;}
-body{
-  font-family:var(--f-body); color:var(--ink); background-color:var(--kraft);
-  background-image:
-    radial-gradient(circle at 15% 8%,rgba(124,148,115,0.16),transparent 40%),
-    radial-gradient(circle at 88% 92%,rgba(189,107,61,0.10),transparent 45%),
-    repeating-linear-gradient(115deg,rgba(43,42,36,0.025) 0px,rgba(43,42,36,0.025) 1px,transparent 1px,transparent 5px);
-  min-height:100vh; padding:28px 16px calc(28px + env(safe-area-inset-bottom));
-  display:flex; flex-direction:column; align-items:center;
-}
+body{font-family:var(--f-body);color:var(--ink);background-color:var(--kraft);background-image:radial-gradient(circle at 15% 8%,rgba(124,148,115,0.16),transparent 40%),radial-gradient(circle at 88% 92%,rgba(189,107,61,0.10),transparent 45%),repeating-linear-gradient(115deg,rgba(43,42,36,0.025) 0px,rgba(43,42,36,0.025) 1px,transparent 1px,transparent 5px);min-height:100vh;padding:28px 16px calc(28px + env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;}
 h1,h2,h3,h4{font-family:var(--f-display);color:var(--forest-dark);margin:0 0 4px 0;font-weight:600;}
 p{margin:0;}
 .hidden{display:none!important;}
 a{color:var(--forest);}
-
 .shell{width:100%;max-width:440px;}
 .shell.wide{max-width:620px;}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 24px;}
@@ -53,15 +42,12 @@ a{color:var(--forest);}
 .eyebrow{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;color:var(--moss);text-transform:uppercase;margin-bottom:6px;display:block;}
 .subtitle{color:var(--ink-soft);font-size:14px;margin-bottom:22px;line-height:1.5;}
 .center{text-align:center;}
-
 .brand-row{display:flex;flex-direction:column;align-items:center;margin-bottom:22px;}
 .brand-mark{width:72px;height:72px;margin-bottom:10px;}
 .brand-word{font-family:var(--f-display);font-size:30px;font-weight:700;letter-spacing:.02em;color:var(--forest-dark);}
 .brand-tagline{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;color:var(--clay-dark);margin-top:2px;}
-
 .ttc-logo circle.ring{fill:none;stroke:var(--forest);stroke-width:3;}
 .ttc-logo.small{width:34px;height:34px;}
-
 .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;gap:10px;}
 .topbar .who{display:flex;align-items:center;gap:10px;}
 .topbar .who-text .name{font-family:var(--f-display);font-weight:600;font-size:17px;color:var(--forest-dark);line-height:1.2;}
@@ -69,16 +55,10 @@ a{color:var(--forest);}
 .topbar-actions{display:flex;gap:6px;}
 .icon-btn{background:transparent;border:1px solid var(--line);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink-soft);flex:none;}
 .icon-btn:hover{background:var(--kraft-2);}
-
 label{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin:16px 0 6px;}
 label:first-of-type{margin-top:0;}
 .field-wrap{position:relative;}
-input[type=text],input[type=password],input[type=number],select{
-  width:100%;padding:13px 14px;font-size:15px;font-family:var(--f-body);
-  border:1.5px solid var(--line);border-radius:var(--radius-sm);
-  background:var(--paper);color:var(--ink);outline:none;transition:border-color .15s ease;
-  -webkit-user-select:text;user-select:text;
-}
+input[type=text],input[type=password],input[type=number],select{width:100%;padding:13px 14px;font-size:15px;font-family:var(--f-body);border:1.5px solid var(--line);border-radius:var(--radius-sm);background:var(--paper);color:var(--ink);outline:none;transition:border-color .15s ease;-webkit-user-select:text;user-select:text;}
 input::placeholder{color:#B4AD98;}
 input:focus,select:focus{border-color:var(--forest);}
 select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7l5 6 5-6' stroke='%232B2A24' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:34px;}
@@ -86,7 +66,6 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
 .hint{font-size:12.5px;color:var(--ink-soft);margin-top:6px;line-height:1.45;}
 .error-text{font-size:12.5px;color:var(--stamp);margin-top:6px;min-height:0;}
 .success-text{font-size:12.5px;color:var(--forest);margin-top:6px;min-height:0;}
-
 button.btn{width:100%;padding:14px 16px;border:none;border-radius:var(--radius-sm);font-family:var(--f-body);font-weight:600;font-size:15.5px;cursor:pointer;margin-top:16px;display:flex;align-items:center;justify-content:center;gap:8px;transition:transform .08s ease,opacity .15s ease;}
 button.btn:active{transform:scale(0.98);}
 button.btn:disabled{opacity:.5;cursor:not-allowed;}
@@ -104,14 +83,11 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
 .btn-stamp{background:var(--stamp);color:var(--paper);box-shadow:0 6px 16px rgba(139,58,58,0.35);font-family:var(--f-mono);letter-spacing:.04em;}
 .btn-stamp:hover{background:#71302f;}
 .links-row{display:flex;flex-direction:column;gap:6px;align-items:center;margin-top:18px;}
-
 .btn-withdraw{background:linear-gradient(135deg,var(--gold) 0%,var(--clay) 100%);color:var(--paper);box-shadow:0 6px 16px rgba(184,151,58,0.32);}
 .btn-withdraw:hover{opacity:.9;}
-
 .tabs{display:flex;gap:6px;background:var(--kraft-2);border-radius:var(--radius-sm);padding:4px;margin-bottom:16px;}
 .tab-btn{flex:1;padding:9px 10px;border:none;background:transparent;border-radius:8px;font-family:var(--f-body);font-weight:600;font-size:13.5px;color:var(--ink-soft);cursor:pointer;}
 .tab-btn.active{background:var(--paper);color:var(--forest-dark);box-shadow:var(--shadow-sm);}
-
 .saldo-block{background:var(--forest);color:var(--paper);border-radius:var(--radius);padding:20px 22px;text-align:center;margin-bottom:18px;background-image:radial-gradient(circle at 90% -10%,rgba(255,255,255,0.08),transparent 50%);}
 .saldo-block .label{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.75;}
 .saldo-block .amount{font-family:var(--f-display);font-size:34px;font-weight:700;margin-top:6px;}
@@ -123,19 +99,16 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
 .rekap-card .total{font-family:var(--f-mono);font-weight:700;font-size:14px;color:var(--clay-dark);margin-top:2px;}
 .empty-state{text-align:center;padding:22px 10px;color:var(--ink-soft);font-size:13.5px;}
 .empty-state svg{width:34px;height:34px;color:var(--moss);margin-bottom:8px;}
-
 .badge{display:inline-flex;align-items:center;gap:5px;font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.06em;padding:3px 9px;border-radius:20px;text-transform:uppercase;}
 .badge-pending{background:var(--pending-soft);color:var(--pending);}
 .badge-aktif{background:var(--aktif-soft);color:var(--aktif);}
 .badge-ditolak{background:var(--ditolak-soft);color:var(--ditolak);}
 .badge-selesai{background:#DCE6D4;color:#203329;}
-
 .member-card{display:flex;align-items:center;gap:14px;background:var(--paper-white,#FBF8F0);border:1.5px dashed var(--line);border-radius:var(--radius-sm);padding:14px;margin-bottom:18px;}
 #qr-murid{flex:none;background:#fff;padding:6px;border-radius:8px;line-height:0;}
 .member-card .info .nm{font-family:var(--f-display);font-weight:600;font-size:16px;color:var(--forest-dark);line-height:1.25;}
 .member-card .info .kl{font-family:var(--f-mono);font-size:12px;color:var(--clay-dark);background:var(--moss-soft);display:inline-block;padding:2px 8px;border-radius:6px;margin-top:5px;}
 .member-card .info .scan-hint{font-size:11.5px;color:var(--ink-soft);margin-top:6px;}
-
 .ledger-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
 .ledger-title h3{font-size:16px;}
 .ledger-entry{padding:14px 0;border-top:2px dashed var(--line-soft);}
@@ -149,7 +122,6 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
 .ledger-item-row span:last-child{font-family:var(--f-mono);color:var(--ink);}
 .ledger-sub{display:flex;justify-content:space-between;margin-top:6px;padding-top:6px;border-top:1px solid var(--line-soft);font-weight:700;font-size:14px;}
 .ledger-sub span:last-child{font-family:var(--f-mono);color:var(--clay-dark);}
-
 .withdraw-entry{padding:14px;border-radius:var(--radius-sm);border:1.5px solid var(--line);margin-bottom:10px;background:var(--paper);}
 .withdraw-entry.wd-pending{border-color:rgba(140,107,26,0.4);background:var(--pending-soft);}
 .withdraw-entry.wd-selesai{border-color:rgba(47,74,61,0.3);background:var(--aktif-soft);}
@@ -158,8 +130,9 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
 .wd-amount{font-family:var(--f-display);font-weight:700;font-size:18px;color:var(--forest-dark);}
 .wd-meta{font-size:12.5px;color:var(--ink-soft);margin-top:3px;line-height:1.5;}
 .wd-meta b{color:var(--ink);}
-.wd-actions{display:flex;gap:6px;margin-top:10px;}
-
+.bukti-img{margin-top:10px;border-radius:8px;overflow:hidden;border:1px solid var(--line);}
+.bukti-img img{width:100%;max-height:180px;object-fit:cover;display:block;}
+.bukti-img a{display:block;text-align:center;font-size:12px;font-family:var(--f-mono);color:var(--forest);padding:6px;background:var(--moss-soft);}
 .wd-req-card{background:var(--paper);border:1.5px solid var(--line);border-radius:var(--radius-sm);padding:14px;margin-bottom:10px;}
 .wd-req-card.urgent{border-color:rgba(140,107,26,0.5);background:var(--pending-soft);}
 .wd-req-murid{font-family:var(--f-display);font-weight:600;font-size:15px;color:var(--forest-dark);}
@@ -167,20 +140,32 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
 .wd-req-amount{font-family:var(--f-display);font-weight:700;font-size:20px;color:var(--ink);margin:8px 0 4px;}
 .wd-req-detail{font-size:12.5px;color:var(--ink-soft);line-height:1.6;}
 .wd-req-detail b{color:var(--ink);}
-.wd-req-actions{display:flex;gap:8px;margin-top:12px;}
-
+.wd-req-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;}
+/* ===== QR SCAN LIVE ===== */
 .scan-frame{text-align:center;padding:30px 14px;border:1.5px dashed var(--line);border-radius:var(--radius-sm);background:var(--kraft-2);}
 .scan-frame svg{width:40px;height:40px;color:var(--moss);margin-bottom:10px;}
 .scan-frame p{font-size:13px;color:var(--ink-soft);margin-bottom:14px;}
+#qr-video-wrap{position:relative;border-radius:var(--radius-sm);overflow:hidden;background:#1b1b18;margin-bottom:10px;}
+#qr-video{width:100%;max-height:260px;object-fit:cover;display:block;}
+.qr-scan-line{position:absolute;left:10%;width:80%;height:2px;background:rgba(189,107,61,0.8);box-shadow:0 0 6px rgba(189,107,61,0.6);animation:scanline 2s linear infinite;top:20%;}
+@keyframes scanline{0%{top:20%;}100%{top:80%;}}
+#scan-status{font-family:var(--f-mono);font-size:12px;color:var(--ink-soft);text-align:center;margin-top:6px;min-height:18px;}
+/* ===== BUKTI UPLOAD ===== */
+.bukti-upload-area{border:2px dashed var(--line);border-radius:var(--radius-sm);padding:16px;text-align:center;margin-top:12px;background:var(--kraft-2);cursor:pointer;transition:border-color .15s;}
+.bukti-upload-area:hover{border-color:var(--forest);}
+.bukti-upload-area input{display:none;}
+.bukti-upload-area .up-icon{font-size:28px;margin-bottom:6px;}
+.bukti-upload-area .up-text{font-size:13px;color:var(--ink-soft);}
+.bukti-preview{margin-top:10px;border-radius:8px;overflow:hidden;border:1px solid var(--line);}
+.bukti-preview img{width:100%;max-height:160px;object-fit:cover;display:block;}
+.upload-progress{margin-top:8px;height:4px;background:var(--line);border-radius:2px;overflow:hidden;}
+.upload-progress-bar{height:100%;background:var(--forest);width:0%;transition:width .3s;}
+/* ===== REST ===== */
 .kartu-terpilih{background:var(--moss-soft);border:1.5px solid rgba(124,148,115,0.4);border-radius:var(--radius-sm);padding:14px;margin-bottom:18px;display:flex;justify-content:space-between;align-items:center;gap:10px;}
 .kartu-terpilih .label{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--forest);}
 .kartu-terpilih .nm{font-weight:700;color:var(--forest-dark);font-size:15px;margin-top:2px;}
 .kartu-terpilih .kl{font-family:var(--f-mono);font-size:12px;color:var(--clay-dark);}
 #camera-input{display:none;}
-#scan-preview-wrap{margin-bottom:10px;border-radius:var(--radius-sm);overflow:hidden;background:#1b1b18;text-align:center;min-height:0;}
-#scan-preview{max-width:100%;border-radius:var(--radius-sm);}
-#scan-status{font-family:var(--f-mono);font-size:12px;color:var(--ink-soft);text-align:center;margin-top:6px;min-height:18px;}
-
 .row-inline{display:flex;gap:10px;align-items:flex-end;}
 .row-inline>div{flex:1;}
 .subtotal-preview{font-family:var(--f-mono);font-size:13px;color:var(--ink-soft);text-align:right;margin-top:6px;min-height:18px;}
@@ -196,16 +181,13 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
 .keranjang-total{display:flex;justify-content:space-between;align-items:center;padding-top:12px;margin-top:6px;border-top:2px solid var(--line);}
 .keranjang-total .lbl{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);}
 .keranjang-total .val{font-family:var(--f-display);font-weight:700;font-size:22px;color:var(--forest-dark);}
-
 .mini-log{margin-top:6px;}
 .mini-log-item{display:flex;justify-content:space-between;font-size:12.5px;padding:7px 0;border-bottom:1px solid var(--line-soft);color:var(--ink-soft);}
 .mini-log-item b{color:var(--ink);}
-
 .jenis-row{display:grid;grid-template-columns:1.6fr .8fr .9fr auto;gap:8px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line-soft);}
 .jenis-row input,.jenis-row select{padding:9px 10px;font-size:13px;}
 .jenis-row .del-btn{background:none;border:none;color:var(--stamp);cursor:pointer;padding:6px;}
 .jenis-add{margin-top:14px;padding-top:14px;border-top:2px dashed var(--line);}
-
 .stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:20px;}
 .stat-card{background:var(--moss-soft);border:1px solid rgba(124,148,115,0.35);border-radius:var(--radius-sm);padding:14px;}
 .stat-card .s-label{font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px;}
@@ -214,65 +196,89 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
 .stat-card.gold .s-value{color:var(--gold);}
 .stat-card.pending{background:var(--pending-soft);border-color:rgba(140,107,26,0.35);}
 .stat-card.pending .s-value{color:var(--pending);}
-
 .petugas-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--line-soft);gap:10px;}
 .petugas-row .pinfo .pnama{font-weight:600;font-size:14px;color:var(--ink);}
 .petugas-row .pinfo .ptgl{font-family:var(--f-mono);font-size:11px;color:var(--ink-soft);margin-top:2px;}
 .petugas-row .pactions{display:flex;gap:6px;flex:none;}
-
 .rekap-kelas-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line-soft);}
 .rekap-kelas-row .kls-nm{font-weight:600;font-size:13.5px;color:var(--ink);}
 .rekap-kelas-row .kls-total{font-family:var(--f-mono);font-weight:700;color:var(--clay-dark);}
-
-.alert-pending{
-  background:var(--pending-soft);border:1.5px solid rgba(140,107,26,0.4);
-  border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:18px;
-  display:flex;align-items:flex-start;gap:12px;
-}
+.alert-pending{background:var(--pending-soft);border:1.5px solid rgba(140,107,26,0.4);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:18px;display:flex;align-items:flex-start;gap:12px;}
 .alert-pending svg{flex:none;width:20px;height:20px;color:var(--pending);margin-top:1px;}
 .alert-pending .ap-text .ap-title{font-weight:700;font-size:14px;color:var(--pending);}
 .alert-pending .ap-text .ap-sub{font-size:13px;color:var(--ink-soft);margin-top:3px;line-height:1.45;}
-
 .divider{display:flex;align-items:center;gap:10px;margin:18px 0;}
 .divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line);}
 .divider span{font-family:var(--f-mono);font-size:11px;color:var(--ink-soft);letter-spacing:.06em;white-space:nowrap;}
-
 .toast-host{position:fixed;bottom:18px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:8px;z-index:9999;padding:0 16px calc(env(safe-area-inset-bottom));pointer-events:none;}
 .toast{font-family:var(--f-body);font-size:13.5px;font-weight:500;color:var(--paper);background:var(--ink);padding:11px 18px;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.25);max-width:420px;opacity:0;transform:translateY(10px);transition:all .25s ease;pointer-events:auto;}
 .toast.show{opacity:1;transform:translateY(0);}
 .toast.ok{background:var(--forest-dark);}
 .toast.err{background:var(--stamp);}
-
 .overlay{position:fixed;inset:0;background:rgba(43,42,36,0.55);display:flex;align-items:center;justify-content:center;z-index:9000;padding:20px;}
 .overlay.hidden{display:none;}
-.modal-box{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;max-width:380px;width:100%;text-align:center;}
+.modal-box{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;max-width:380px;width:100%;text-align:center;max-height:90vh;overflow-y:auto;}
 .modal-box p{font-size:14px;color:var(--ink-soft);margin:10px 0 18px;line-height:1.5;}
 .modal-actions{display:flex;gap:10px;}
 .modal-actions .btn{margin-top:0;}
-
 .stamp-modal .ring{width:118px;height:118px;margin:0 auto 14px;border-radius:47% 53% 49% 51%/53% 47% 53% 47%;border:3px solid var(--stamp);color:var(--stamp);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:scale(1.5) rotate(8deg);opacity:0;animation:stampHit .42s cubic-bezier(.2,1.4,.4,1) forwards;background-image:repeating-radial-gradient(circle at 50% 50%,rgba(139,58,58,0.06) 0px,rgba(139,58,58,0.06) 1px,transparent 1px,transparent 4px);}
 @keyframes stampHit{to{transform:scale(1) rotate(-5deg);opacity:1;}}
 .stamp-modal .ring .word{font-family:var(--f-mono);font-weight:700;font-size:11px;letter-spacing:.08em;}
 .stamp-modal .ring .small{font-size:8px;margin-top:2px;max-width:80px;line-height:1.2;}
 .stamp-modal .total{font-family:var(--f-display);font-weight:700;font-size:24px;color:var(--forest-dark);margin-bottom:4px;}
 .stamp-modal .meta{font-family:var(--f-mono);font-size:11.5px;color:var(--ink-soft);margin-bottom:18px;}
-
 .wd-modal-metode{display:flex;gap:8px;margin:12px 0;}
 .wd-metode-btn{flex:1;padding:12px 8px;border:2px solid var(--line);border-radius:var(--radius-sm);background:var(--paper);font-family:var(--f-body);font-weight:600;font-size:13px;cursor:pointer;color:var(--ink-soft);transition:all .15s;}
 .wd-metode-btn.active{border-color:var(--forest);color:var(--forest);background:var(--aktif-soft);}
 .wd-modal-icon{font-size:18px;display:block;margin-bottom:4px;}
-
 .setup-list{text-align:left;font-size:13px;color:var(--ink-soft);line-height:1.6;padding-left:18px;margin:14px 0;}
 .setup-list code{background:var(--kraft-2);padding:1px 5px;border-radius:4px;font-family:var(--f-mono);font-size:12px;}
-
 :focus-visible{outline:2px solid var(--clay);outline-offset:2px;}
-@media(prefers-reduced-motion:reduce){.stamp-modal .ring{animation:none;opacity:1;transform:rotate(-5deg);}*{transition:none!important;}}
+@media(prefers-reduced-motion:reduce){.stamp-modal .ring{animation:none;opacity:1;transform:rotate(-5deg);}*{transition:none!important;}.qr-scan-line{animation:none;}}
 @media(max-width:420px){.rekap-grid{grid-template-columns:repeat(2,1fr);}.jenis-row{grid-template-columns:1fr;gap:4px;}.card{padding:20px 18px;}.stat-grid{grid-template-columns:1fr;}.wd-modal-metode{flex-wrap:wrap;}}
+
+/* ===== FOOTER ===== */
+.site-footer {
+  width: 100%;
+  max-width: 620px;
+  margin-top: 28px;
+  padding: 18px 16px calc(16px + env(safe-area-inset-bottom));
+  border-top: 1.5px dashed var(--line);
+  text-align: center;
+}
+.site-footer .footer-logo {
+  font-family: var(--f-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--forest-dark);
+  letter-spacing: .04em;
+}
+.site-footer .footer-copy {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: .06em;
+  color: var(--ink-soft);
+  margin-top: 5px;
+  line-height: 1.6;
+}
+.site-footer .footer-copy a {
+  color: var(--moss);
+  text-decoration: none;
+}
+.site-footer .footer-copy a:hover {
+  text-decoration: underline;
+}
+.footer-divider {
+  display: inline-block;
+  margin: 0 6px;
+  opacity: .4;
+}
+
 </style>
 </head>
 <body>
 
-<!-- ======================= SETUP ======================= -->
+<!-- SETUP -->
 <section id="page-setup" class="shell page hidden">
   <div class="card">
     <span class="eyebrow">Pengaturan Awal</span>
@@ -280,7 +286,7 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
     <p class="subtitle">Tempel URL Web App Google Apps Script ke variabel <code style="font-family:var(--f-mono);background:var(--kraft-2);padding:1px 5px;border-radius:4px;font-size:13px;">WEB_APP_URL</code> di bagian atas file ini.</p>
     <ol class="setup-list">
       <li>Buat Google Spreadsheet baru.</li>
-      <li>Buka <b>Extensions → Apps Script</b>, tempel isi file <code>Code.gs</code>.</li>
+      <li>Buka <b>Extensions → Apps Script</b>, tempel isi file <code>Code.gs</code> + <code>TAMBAHAN_Code.gs</code>.</li>
       <li>Klik <b>Deploy → New deployment</b>, tipe <b>Web app</b>, akses <b>Anyone</b>.</li>
       <li>Salin URL Web App → tempel ke <code>WEB_APP_URL</code> di index.html.</li>
     </ol>
@@ -288,28 +294,21 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
   </div>
 </section>
 
-<!-- ======================= LANDING ======================= -->
+<!-- LANDING -->
 <section id="page-landing" class="shell page hidden">
   <div class="brand-row">
     <svg class="ttc-logo brand-mark" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <marker id="arr-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-          <path d="M2 1L8 5L2 9" fill="none" stroke="#7CB87A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </marker>
-      </defs>
-      <circle cx="70" cy="70" r="66" fill="#203329"/>
-      <circle cx="70" cy="70" r="60" fill="none" stroke="#2F4A3D" stroke-width="1.5"/>
+      <defs><marker id="arr-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#7CB87A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+      <circle cx="70" cy="70" r="66" fill="#203329"/><circle cx="70" cy="70" r="60" fill="none" stroke="#2F4A3D" stroke-width="1.5"/>
       <path d="M70,28 A42,42 0 0,1 106,56" fill="none" stroke="#7CB87A" stroke-width="7" stroke-linecap="round" marker-end="url(#arr-b)"/>
       <path d="M106,56 A42,42 0 0,1 50,110" fill="none" stroke="#7CB87A" stroke-width="7" stroke-linecap="round" marker-end="url(#arr-b)"/>
       <path d="M50,110 A42,42 0 0,1 70,28" fill="none" stroke="#7CB87A" stroke-width="7" stroke-linecap="round" marker-end="url(#arr-b)"/>
-      <circle cx="70" cy="70" r="22" fill="#B8973A"/>
-      <circle cx="70" cy="70" r="18" fill="#D4AD45"/>
+      <circle cx="70" cy="70" r="22" fill="#B8973A"/><circle cx="70" cy="70" r="18" fill="#D4AD45"/>
       <text x="70" y="76" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="17" fill="#203329">Rp</text>
     </svg>
     <div class="brand-word">TrashToCash</div>
     <div class="brand-tagline">SAMPAH JADI SALDO</div>
   </div>
-
   <div class="card">
     <h2>Masuk</h2>
     <p class="subtitle">Murid: isi nama + kelas. Petugas: isi nama + kata sandi. Admin: gunakan tombol di bawah.</p>
@@ -318,9 +317,7 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
     <label for="login-kunci">Kelas (Murid) / Kata Sandi (Petugas)</label>
     <div class="field-wrap">
       <input type="password" id="login-kunci" placeholder="11 TEI A — atau kata sandi petugas" autocomplete="off">
-      <button type="button" class="toggle-eye" onclick="toggleEye('login-kunci',this)" aria-label="Tampilkan">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-      </button>
+      <button type="button" class="toggle-eye" onclick="toggleEye('login-kunci',this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></button>
     </div>
     <p class="hint">Murid: ketik kelas, contoh <b>11 TEI A</b>. Petugas: ketik kata sandi yang dipakai saat mendaftar.</p>
     <p class="error-text" id="login-error"></p>
@@ -337,7 +334,7 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
   </div>
 </section>
 
-<!-- ======================= REGISTER MURID ======================= -->
+<!-- REGISTER MURID -->
 <section id="page-register-murid" class="shell page hidden">
   <div class="card">
     <span class="eyebrow">Pendaftaran Murid</span>
@@ -350,49 +347,38 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
     <p class="hint">Format: tingkat, jurusan/rombel, lalu rombongan. Contoh: <b>11 TEI A</b>, <b>12 IPS 2</b>.</p>
     <p class="error-text" id="rm-error"></p>
     <button class="btn btn-primary" id="btn-rm" onclick="prosesRegisterMurid()">Daftar &amp; Masuk</button>
-    <div class="links-row">
-      <button class="btn-link" onclick="bukaHalaman('page-landing')">← Sudah punya kartu? Masuk</button>
-    </div>
+    <div class="links-row"><button class="btn-link" onclick="bukaHalaman('page-landing')">← Sudah punya kartu? Masuk</button></div>
   </div>
 </section>
 
-<!-- ======================= REGISTER PETUGAS ======================= -->
+<!-- REGISTER PETUGAS -->
 <section id="page-register-petugas" class="shell page hidden">
   <div class="card">
     <span class="eyebrow">Pendaftaran Petugas</span>
     <h2>Daftar Akun Petugas</h2>
     <div class="alert-pending">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-      <div class="ap-text">
-        <div class="ap-title">Perlu Persetujuan Admin</div>
-        <div class="ap-sub">Setelah mendaftar, akun petugasmu perlu dikonfirmasi oleh admin sekolah sebelum bisa digunakan.</div>
-      </div>
+      <div class="ap-text"><div class="ap-title">Perlu Persetujuan Admin</div><div class="ap-sub">Setelah mendaftar, akun petugasmu perlu dikonfirmasi oleh admin sekolah sebelum bisa digunakan.</div></div>
     </div>
     <label for="rp-nama">Nama Lengkap</label>
     <input type="text" id="rp-nama" placeholder="BUDI SANTOSO" autocomplete="off" inputmode="text">
     <label for="rp-pass">Kata Sandi</label>
     <div class="field-wrap">
       <input type="password" id="rp-pass" placeholder="Minimal 4 karakter" autocomplete="off">
-      <button type="button" class="toggle-eye" onclick="toggleEye('rp-pass',this)" aria-label="Tampilkan">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-      </button>
+      <button type="button" class="toggle-eye" onclick="toggleEye('rp-pass',this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></button>
     </div>
     <label for="rp-pass2">Ulangi Kata Sandi</label>
     <div class="field-wrap">
       <input type="password" id="rp-pass2" placeholder="Ketik ulang kata sandi" autocomplete="off">
-      <button type="button" class="toggle-eye" onclick="toggleEye('rp-pass2',this)" aria-label="Tampilkan">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-      </button>
+      <button type="button" class="toggle-eye" onclick="toggleEye('rp-pass2',this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></button>
     </div>
     <p class="error-text" id="rp-error"></p>
     <button class="btn btn-clay" id="btn-rp" onclick="prosesRegisterPetugas()">Daftar — Tunggu Konfirmasi</button>
-    <div class="links-row">
-      <button class="btn-link" onclick="bukaHalaman('page-landing')">← Sudah punya akun? Masuk</button>
-    </div>
+    <div class="links-row"><button class="btn-link" onclick="bukaHalaman('page-landing')">← Sudah punya akun? Masuk</button></div>
   </div>
 </section>
 
-<!-- ======================= ADMIN LOGIN ======================= -->
+<!-- ADMIN LOGIN -->
 <section id="page-admin-login" class="shell page hidden">
   <div class="brand-row">
     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" style="margin-bottom:10px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
@@ -405,46 +391,27 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
     <label for="al-pass">Kata Sandi Admin</label>
     <div class="field-wrap">
       <input type="password" id="al-pass" placeholder="Kata sandi admin" autocomplete="off">
-      <button type="button" class="toggle-eye" onclick="toggleEye('al-pass',this)" aria-label="Tampilkan">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-      </button>
+      <button type="button" class="toggle-eye" onclick="toggleEye('al-pass',this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></button>
     </div>
     <p class="hint">Password default: <b>daur2025</b>. Segera ganti setelah masuk pertama kali.</p>
     <p class="error-text" id="al-error"></p>
     <button class="btn btn-gold" id="btn-al" onclick="prosesAdminLogin()">Masuk Panel Admin</button>
-    <div class="links-row">
-      <button class="btn-link" onclick="bukaHalaman('page-landing')">← Kembali ke halaman utama</button>
-    </div>
+    <div class="links-row"><button class="btn-link" onclick="bukaHalaman('page-landing')">← Kembali ke halaman utama</button></div>
   </div>
 </section>
 
-<!-- ======================= DASHBOARD MURID ======================= -->
+<!-- DASHBOARD MURID -->
 <section id="page-murid" class="shell page hidden">
   <div class="topbar">
     <div class="who">
-      <svg class="ttc-logo small" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-        <circle class="ring" cx="70" cy="70" r="60"/>
-        <rect x="44" y="58" width="52" height="48" rx="5" fill="var(--forest)"/>
-        <rect x="38" y="50" width="64" height="10" rx="4" fill="var(--forest-dark)"/>
-        <rect x="60" y="44" width="20" height="8" rx="3" fill="var(--forest-dark)"/>
-        <circle cx="102" cy="38" r="16" fill="var(--gold)"/>
-        <text x="102" y="43" text-anchor="middle" font-family="serif" font-weight="700" font-size="18" fill="white">Rp</text>
-      </svg>
-      <div class="who-text">
-        <div class="name" id="murid-nama-text">—</div>
-        <div class="role">Buku Tabungan Murid</div>
-      </div>
+      <svg class="ttc-logo small" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg"><circle class="ring" cx="70" cy="70" r="60"/><rect x="44" y="58" width="52" height="48" rx="5" fill="var(--forest)"/><rect x="38" y="50" width="64" height="10" rx="4" fill="var(--forest-dark)"/><rect x="60" y="44" width="20" height="8" rx="3" fill="var(--forest-dark)"/><circle cx="102" cy="38" r="16" fill="var(--gold)"/><text x="102" y="43" text-anchor="middle" font-family="serif" font-weight="700" font-size="18" fill="white">Rp</text></svg>
+      <div class="who-text"><div class="name" id="murid-nama-text">—</div><div class="role">Buku Tabungan Murid</div></div>
     </div>
     <div class="topbar-actions">
-      <button class="icon-btn" onclick="bukaGantiPassword('murid')" aria-label="Ganti password" title="Ganti password">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      </button>
-      <button class="icon-btn" onclick="muatDashboardMurid()" aria-label="Muat ulang" title="Muat ulang">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a9 9 0 1 1-2.6-6.4M21 4v5h-5"/></svg>
-      </button>
+      <button class="icon-btn" onclick="bukaGantiPassword('murid')" title="Ganti password"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></button>
+      <button class="icon-btn" onclick="muatDashboardMurid()" title="Muat ulang"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a9 9 0 1 1-2.6-6.4M21 4v5h-5"/></svg></button>
     </div>
   </div>
-
   <div class="card">
     <div class="member-card">
       <div id="qr-murid"></div>
@@ -458,53 +425,31 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
       <div class="label">Saldo Terkumpul</div>
       <div class="amount" id="murid-total-saldo">Rp 0</div>
     </div>
-
     <button class="btn btn-withdraw" onclick="bukaModalWithdraw()">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
       Tarik Saldo (Withdraw)
     </button>
-
     <div id="murid-rekap-grid" class="rekap-grid" style="margin-top:18px;"></div>
-
     <div class="ledger-title" style="margin-top:8px;"><h3>Riwayat Penarikan</h3></div>
     <div id="murid-withdraw-list"></div>
-
     <div class="ledger-title" style="margin-top:14px;"><h3>Buku Catatan Setoran</h3></div>
     <div id="murid-ledger-list"></div>
   </div>
-
-  <div class="card center">
-    <button class="btn-link danger" onclick="logout()">Keluar</button>
-  </div>
+  <div class="card center"><button class="btn-link danger" onclick="logout()">Keluar</button></div>
 </section>
 
-<!-- ======================= DASHBOARD PETUGAS ======================= -->
+<!-- DASHBOARD PETUGAS -->
 <section id="page-petugas" class="shell wide page hidden">
   <div class="topbar">
     <div class="who">
-      <svg class="ttc-logo small" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-        <circle class="ring" cx="70" cy="70" r="60"/>
-        <rect x="44" y="58" width="52" height="48" rx="5" fill="var(--forest)"/>
-        <rect x="38" y="50" width="64" height="10" rx="4" fill="var(--forest-dark)"/>
-        <rect x="60" y="44" width="20" height="8" rx="3" fill="var(--forest-dark)"/>
-        <circle cx="102" cy="38" r="16" fill="var(--gold)"/>
-        <text x="102" y="43" text-anchor="middle" font-family="serif" font-weight="700" font-size="18" fill="white">Rp</text>
-      </svg>
-      <div class="who-text">
-        <div class="name" id="petugas-nama-text">—</div>
-        <div class="role">Petugas Aktif</div>
-      </div>
+      <svg class="ttc-logo small" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg"><circle class="ring" cx="70" cy="70" r="60"/><rect x="44" y="58" width="52" height="48" rx="5" fill="var(--forest)"/><rect x="38" y="50" width="64" height="10" rx="4" fill="var(--forest-dark)"/><rect x="60" y="44" width="20" height="8" rx="3" fill="var(--forest-dark)"/><circle cx="102" cy="38" r="16" fill="var(--gold)"/><text x="102" y="43" text-anchor="middle" font-family="serif" font-weight="700" font-size="18" fill="white">Rp</text></svg>
+      <div class="who-text"><div class="name" id="petugas-nama-text">—</div><div class="role">Petugas Aktif</div></div>
     </div>
     <div class="topbar-actions">
-      <button class="icon-btn" onclick="bukaGantiPassword('petugas')" aria-label="Ganti password" title="Ganti password">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      </button>
-      <button class="icon-btn" onclick="bukaHalamanKelolaJenis()" aria-label="Kelola jenis" title="Kelola jenis sampah">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3h0A1.7 1.7 0 0 0 10 3.1V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9v0a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg>
-      </button>
+      <button class="icon-btn" onclick="bukaGantiPassword('petugas')" title="Ganti password"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></button>
+      <button class="icon-btn" onclick="bukaHalamanKelolaJenis()" title="Kelola jenis sampah"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3h0A1.7 1.7 0 0 0 10 3.1V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9v0a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg></button>
     </div>
   </div>
-
   <div class="card" style="padding-bottom:10px;">
     <div class="tabs">
       <button class="tab-btn active" id="tab-p-setoran" onclick="gantiTabPetugasUtama('setoran')">Setoran Sampah</button>
@@ -513,27 +458,29 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
         <span id="badge-wd-count" style="display:none;background:var(--stamp);color:#fff;border-radius:10px;font-size:10px;padding:1px 6px;margin-left:4px;font-family:var(--f-mono);">0</span>
       </button>
     </div>
-
     <div id="panel-p-setoran">
       <div class="tabs" style="margin-bottom:14px;">
-        <button class="tab-btn active" id="tab-scan" onclick="gantiTabPetugas('scan')">Pindai QR</button>
-        <button class="tab-btn" id="tab-manual" onclick="gantiTabPetugas('manual')">Cari Manual</button>
+        <button class="tab-btn active" id="tab-scan" onclick="gantiTabPetugas('scan')">📷 Pindai QR Live</button>
+        <button class="tab-btn" id="tab-manual" onclick="gantiTabPetugas('manual')">🔍 Cari Manual</button>
       </div>
-
+      <!-- QR LIVE SCAN -->
       <div id="panel-scan">
         <div id="scan-frame-idle" class="scan-frame">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2Z"/><circle cx="12" cy="13" r="4"/></svg>
-          <p>Ambil foto kode QR murid menggunakan kamera.</p>
-          <button class="btn btn-clay" onclick="bukaKameraScan()">Buka Kamera</button>
+          <p>Arahkan kamera ke kode QR murid untuk memindai secara langsung.</p>
+          <button class="btn btn-clay" onclick="mulaiScanLive()">Buka Kamera &amp; Scan</button>
         </div>
-        <input type="file" id="camera-input" accept="image/*" capture="environment" onchange="prosesGambarQR(this)">
-        <div id="scan-preview-wrap" class="hidden">
-          <img id="scan-preview" alt="Preview QR">
-          <div id="scan-status"></div>
-          <button class="btn btn-ghost" style="margin-top:10px;" onclick="resetScanFrame()">Pindai Ulang</button>
+        <div id="scan-live-wrap" class="hidden">
+          <div id="qr-video-wrap">
+            <video id="qr-video" autoplay muted playsinline></video>
+            <div class="qr-scan-line"></div>
+          </div>
+          <canvas id="qr-canvas" style="display:none;"></canvas>
+          <div id="scan-status">Mengarahkan kamera...</div>
+          <button class="btn btn-ghost" style="margin-top:10px;" onclick="stopScanLive()">Hentikan Kamera</button>
         </div>
       </div>
-
+      <!-- MANUAL SEARCH -->
       <div id="panel-manual" class="hidden">
         <label for="manual-nama">Nama Murid</label>
         <input type="text" id="manual-nama" placeholder="HANIF AHMAD ARIYADINOTO" inputmode="text">
@@ -541,7 +488,6 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
         <input type="text" id="manual-kelas" placeholder="11 TEI A" inputmode="text">
         <button class="btn btn-clay" onclick="cariManual()">Cari Murid</button>
       </div>
-
       <div id="kartu-murid-terpilih" class="kartu-terpilih hidden" style="margin-top:16px;">
         <div>
           <div class="label">Murid Terpilih</div>
@@ -551,9 +497,8 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
         <button class="btn-link" onclick="resetMuridTerpilih()">Ganti</button>
       </div>
     </div>
-
     <div id="panel-p-withdraw" class="hidden">
-      <p class="subtitle" style="margin-bottom:14px;">Daftar permintaan penarikan saldo dari murid. Setelah transfer/bayar, klik Konfirmasi Selesai.</p>
+      <p class="subtitle" style="margin-bottom:14px;">Daftar permintaan penarikan saldo dari murid. Upload bukti transfer, lalu konfirmasi.</p>
       <button class="btn btn-ghost" style="margin-top:0;margin-bottom:14px;" onclick="muatRequestWithdraw()">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-2.6-6.4M21 4v5h-5"/></svg>
         Muat Ulang
@@ -561,14 +506,11 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
       <div id="petugas-wd-list"><div class="keranjang-empty">Memuat data...</div></div>
     </div>
   </div>
-
   <div id="card-catat-setoran" class="card">
     <h3>Catat Setoran Sampah</h3>
     <p class="subtitle" style="margin-bottom:14px;">Pilih jenis dan jumlah sampah, lalu tambahkan ke keranjang.</p>
     <label for="jenis-sampah-select">Jenis Sampah</label>
-    <select id="jenis-sampah-select" onchange="updateSubtotalPreview()">
-      <option value="">— Belum ada jenis sampah —</option>
-    </select>
+    <select id="jenis-sampah-select" onchange="updateSubtotalPreview()"><option value="">— Belum ada jenis sampah —</option></select>
     <div class="row-inline">
       <div>
         <label for="jumlah-sampah">Jumlah</label>
@@ -581,41 +523,26 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
     <div class="subtotal-preview" id="subtotal-preview">Subtotal: <b>Rp 0</b></div>
     <div class="keranjang">
       <div id="keranjang-list"><div class="keranjang-empty">Keranjang masih kosong.</div></div>
-      <div class="keranjang-total">
-        <span class="lbl">Total Pencairan</span>
-        <span class="val" id="keranjang-total">Rp 0</span>
-      </div>
+      <div class="keranjang-total"><span class="lbl">Total Pencairan</span><span class="val" id="keranjang-total">Rp 0</span></div>
     </div>
     <button class="btn btn-stamp" id="btn-setor" onclick="prosesSetor()">◉ Stempel &amp; Simpan Setoran</button>
   </div>
-
   <div id="card-log-sesi" class="card">
     <h3 style="font-size:15px;">Setoran Sesi Ini</h3>
     <div id="riwayat-petugas-list" class="mini-log"><div class="keranjang-empty">Belum ada setoran tercatat pada sesi ini.</div></div>
   </div>
-
-  <div class="card center">
-    <button class="btn-link danger" onclick="logout()">Keluar Panel</button>
-  </div>
+  <div class="card center"><button class="btn-link danger" onclick="logout()">Keluar Panel</button></div>
 </section>
 
-<!-- ======================= KELOLA JENIS SAMPAH ======================= -->
+<!-- KELOLA JENIS SAMPAH -->
 <section id="page-kelola-jenis" class="shell wide page hidden">
   <div class="topbar">
-    <div class="who-text">
-      <div class="name">Kelola Jenis &amp; Harga Sampah</div>
-      <div class="role">Bisa diubah sewaktu-waktu</div>
-    </div>
-    <button class="icon-btn" onclick="bukaHalaman('page-petugas')" aria-label="Kembali">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
-    </button>
+    <div class="who-text"><div class="name">Kelola Jenis &amp; Harga Sampah</div><div class="role">Bisa diubah sewaktu-waktu</div></div>
+    <button class="icon-btn" onclick="bukaHalaman('page-petugas')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
   </div>
   <div class="card">
     <div style="display:grid;grid-template-columns:1.6fr .8fr .9fr auto;gap:8px;padding-bottom:8px;border-bottom:2px solid var(--line);">
-      <span class="eyebrow" style="margin:0;">Nama</span>
-      <span class="eyebrow" style="margin:0;">Satuan</span>
-      <span class="eyebrow" style="margin:0;">Harga</span>
-      <span class="eyebrow" style="margin:0;"></span>
+      <span class="eyebrow" style="margin:0;">Nama</span><span class="eyebrow" style="margin:0;">Satuan</span><span class="eyebrow" style="margin:0;">Harga</span><span class="eyebrow" style="margin:0;"></span>
     </div>
     <div id="tabel-jenis-body"></div>
     <div class="jenis-add">
@@ -630,26 +557,18 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
   </div>
 </section>
 
-<!-- ======================= ADMIN DASHBOARD ======================= -->
+<!-- ADMIN DASHBOARD -->
 <section id="page-admin" class="shell wide page hidden">
   <div class="topbar">
     <div class="who">
       <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
-      <div class="who-text">
-        <div class="name">Panel Admin</div>
-        <div class="role">Kontrol Penuh Sistem TrashToCash</div>
-      </div>
+      <div class="who-text"><div class="name">Panel Admin</div><div class="role">Kontrol Penuh Sistem TrashToCash</div></div>
     </div>
-    <div class="topbar-actions">
-      <button class="icon-btn" onclick="muatAdminDashboard()" aria-label="Muat ulang" title="Muat ulang">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a9 9 0 1 1-2.6-6.4M21 4v5h-5"/></svg>
-      </button>
-    </div>
+    <div class="topbar-actions"><button class="icon-btn" onclick="muatAdminDashboard()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a9 9 0 1 1-2.6-6.4M21 4v5h-5"/></svg></button></div>
   </div>
-
   <div class="card">
     <span class="eyebrow">Rekap Keseluruhan</span>
-    <div class="stat-grid" id="admin-stat-grid">
+    <div class="stat-grid">
       <div class="stat-card"><div class="s-label">Total Murid</div><div class="s-value" id="stat-murid">—</div></div>
       <div class="stat-card gold"><div class="s-label">Total Saldo Disetor</div><div class="s-value" id="stat-saldo">—</div></div>
       <div class="stat-card"><div class="s-label">Petugas Aktif</div><div class="s-value" id="stat-aktif">—</div></div>
@@ -658,99 +577,51 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
     <span class="eyebrow">Saldo per Kelas</span>
     <div id="admin-rekap-kelas"></div>
   </div>
-
   <div class="card">
     <span class="eyebrow">Manajemen Petugas</span>
     <h3 style="margin-bottom:4px;">Daftar Petugas</h3>
-    <p class="subtitle">Konfirmasi atau tolak pendaftar baru. Petugas dengan status PENDING belum bisa login.</p>
+    <p class="subtitle">Konfirmasi atau tolak pendaftar baru.</p>
     <div id="admin-petugas-list"></div>
   </div>
-
   <div class="card">
     <span class="eyebrow">Keamanan Admin</span>
     <h3>Ganti Kata Sandi Admin</h3>
     <label for="ap-lama">Kata Sandi Saat Ini</label>
-    <div class="field-wrap">
-      <input type="password" id="ap-lama" placeholder="Kata sandi saat ini" autocomplete="off">
-      <button type="button" class="toggle-eye" onclick="toggleEye('ap-lama',this)" aria-label="Tampilkan">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-      </button>
-    </div>
+    <div class="field-wrap"><input type="password" id="ap-lama" placeholder="Kata sandi saat ini" autocomplete="off"><button type="button" class="toggle-eye" onclick="toggleEye('ap-lama',this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
     <label for="ap-baru">Kata Sandi Baru</label>
-    <div class="field-wrap">
-      <input type="password" id="ap-baru" placeholder="Minimal 6 karakter" autocomplete="off">
-      <button type="button" class="toggle-eye" onclick="toggleEye('ap-baru',this)" aria-label="Tampilkan">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-      </button>
-    </div>
+    <div class="field-wrap"><input type="password" id="ap-baru" placeholder="Minimal 6 karakter" autocomplete="off"><button type="button" class="toggle-eye" onclick="toggleEye('ap-baru',this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
     <label for="ap-baru2">Konfirmasi Kata Sandi Baru</label>
-    <div class="field-wrap">
-      <input type="password" id="ap-baru2" placeholder="Ulangi kata sandi baru" autocomplete="off">
-      <button type="button" class="toggle-eye" onclick="toggleEye('ap-baru2',this)" aria-label="Tampilkan">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-      </button>
-    </div>
-    <p class="error-text" id="ap-error"></p>
-    <p class="success-text" id="ap-success"></p>
+    <div class="field-wrap"><input type="password" id="ap-baru2" placeholder="Ulangi kata sandi baru" autocomplete="off"><button type="button" class="toggle-eye" onclick="toggleEye('ap-baru2',this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+    <p class="error-text" id="ap-error"></p><p class="success-text" id="ap-success"></p>
     <button class="btn btn-gold" id="btn-ap" onclick="prosesGantiPassAdmin()">Perbarui Kata Sandi Admin</button>
   </div>
-
-  <div class="card center">
-    <button class="btn-link danger" onclick="logoutAdmin()">Keluar Panel Admin</button>
-  </div>
+  <div class="card center"><button class="btn-link danger" onclick="logoutAdmin()">Keluar Panel Admin</button></div>
 </section>
 
-<!-- ======================= MODAL WITHDRAW MURID ======================= -->
+<!-- MODAL WITHDRAW MURID -->
 <div class="overlay hidden" id="overlay-withdraw">
   <div class="modal-box" style="text-align:left;max-width:400px;">
     <h3>Tarik Saldo</h3>
-    <p style="font-size:13px;color:var(--ink-soft);margin:6px 0 14px;line-height:1.5;">
-      Saldo tersedia: <b id="wd-saldo-tersedia" style="color:var(--forest-dark);font-family:var(--f-mono);">Rp 0</b>
-    </p>
+    <p style="font-size:13px;color:var(--ink-soft);margin:6px 0 14px;line-height:1.5;">Saldo tersedia: <b id="wd-saldo-tersedia" style="color:var(--forest-dark);font-family:var(--f-mono);">Rp 0</b></p>
     <label for="wd-jumlah" style="margin-top:0;">Jumlah Penarikan</label>
     <input type="number" id="wd-jumlah" placeholder="Contoh: 50000" min="1000" step="1000">
     <label style="margin-top:14px;">Metode Penarikan</label>
     <div class="wd-modal-metode">
-      <button class="wd-metode-btn active" id="wd-btn-ewallet" onclick="pilihMetodeWd('ewallet')">
-        <span class="wd-modal-icon">📱</span>E-Wallet
-      </button>
-      <button class="wd-metode-btn" id="wd-btn-bank" onclick="pilihMetodeWd('bank')">
-        <span class="wd-modal-icon">🏦</span>Transfer Bank
-      </button>
-      <button class="wd-metode-btn" id="wd-btn-cash" onclick="pilihMetodeWd('cash')">
-        <span class="wd-modal-icon">💵</span>Tunai
-      </button>
+      <button class="wd-metode-btn active" id="wd-btn-ewallet" onclick="pilihMetodeWd('ewallet')"><span class="wd-modal-icon">📱</span>E-Wallet</button>
+      <button class="wd-metode-btn" id="wd-btn-bank" onclick="pilihMetodeWd('bank')"><span class="wd-modal-icon">🏦</span>Transfer Bank</button>
+      <button class="wd-metode-btn" id="wd-btn-cash" onclick="pilihMetodeWd('cash')"><span class="wd-modal-icon">💵</span>Tunai</button>
     </div>
     <div id="wd-form-ewallet">
-      <label for="wd-ew-nama">Nama Pemilik E-Wallet</label>
-      <input type="text" id="wd-ew-nama" placeholder="Nama sesuai akun">
+      <label for="wd-ew-nama">Nama Pemilik E-Wallet</label><input type="text" id="wd-ew-nama" placeholder="Nama sesuai akun">
       <label for="wd-ew-platform">Platform</label>
-      <select id="wd-ew-platform">
-        <option value="GoPay">GoPay</option>
-        <option value="OVO">OVO</option>
-        <option value="DANA">DANA</option>
-        <option value="ShopeePay">ShopeePay</option>
-        <option value="LinkAja">LinkAja</option>
-        <option value="Lainnya">Lainnya</option>
-      </select>
-      <label for="wd-ew-nohp">Nomor HP</label>
-      <input type="text" id="wd-ew-nohp" placeholder="08xxxxxxxxxx" inputmode="numeric">
+      <select id="wd-ew-platform"><option value="GoPay">GoPay</option><option value="OVO">OVO</option><option value="DANA">DANA</option><option value="ShopeePay">ShopeePay</option><option value="LinkAja">LinkAja</option><option value="Lainnya">Lainnya</option></select>
+      <label for="wd-ew-nohp">Nomor HP</label><input type="text" id="wd-ew-nohp" placeholder="08xxxxxxxxxx" inputmode="numeric">
     </div>
     <div id="wd-form-bank" class="hidden">
-      <label for="wd-bank-nama">Nama Pemilik Rekening</label>
-      <input type="text" id="wd-bank-nama" placeholder="Nama sesuai rekening">
+      <label for="wd-bank-nama">Nama Pemilik Rekening</label><input type="text" id="wd-bank-nama" placeholder="Nama sesuai rekening">
       <label for="wd-bank-nama-bank">Nama Bank</label>
-      <select id="wd-bank-nama-bank">
-        <option value="BRI">BRI</option>
-        <option value="BNI">BNI</option>
-        <option value="BCA">BCA</option>
-        <option value="Mandiri">Mandiri</option>
-        <option value="BSI">BSI</option>
-        <option value="CIMB Niaga">CIMB Niaga</option>
-        <option value="Lainnya">Lainnya</option>
-      </select>
-      <label for="wd-bank-norek">Nomor Rekening</label>
-      <input type="text" id="wd-bank-norek" placeholder="Nomor rekening" inputmode="numeric">
+      <select id="wd-bank-nama-bank"><option value="BRI">BRI</option><option value="BNI">BNI</option><option value="BCA">BCA</option><option value="Mandiri">Mandiri</option><option value="BSI">BSI</option><option value="CIMB Niaga">CIMB Niaga</option><option value="Lainnya">Lainnya</option></select>
+      <label for="wd-bank-norek">Nomor Rekening</label><input type="text" id="wd-bank-norek" placeholder="Nomor rekening" inputmode="numeric">
     </div>
     <div id="wd-form-cash" class="hidden">
       <p class="hint" style="margin-top:8px;">Penarikan tunai akan diproses langsung oleh petugas. Datangi petugas setelah mengirim request ini.</p>
@@ -763,32 +634,42 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
   </div>
 </div>
 
-<!-- ======================= GANTI PASSWORD MODAL ======================= -->
+<!-- MODAL KONFIRMASI WITHDRAW (PETUGAS) dengan upload bukti -->
+<div class="overlay hidden" id="overlay-konfirmasi-wd">
+  <div class="modal-box" style="text-align:left;max-width:400px;">
+    <h3>Konfirmasi Penarikan</h3>
+    <p id="konfirmasi-wd-info" style="font-size:13px;color:var(--ink-soft);margin:8px 0 4px;line-height:1.5;"></p>
+    <label style="margin-top:12px;">Upload Bukti Transfer <span style="color:var(--ink-soft);font-weight:400;">(opsional tapi disarankan)</span></label>
+    <div class="bukti-upload-area" onclick="document.getElementById('bukti-file-input').click()">
+      <input type="file" id="bukti-file-input" accept="image/*" onchange="pratinjaiBukti(this)">
+      <div class="up-icon">📎</div>
+      <div class="up-text">Ketuk untuk pilih foto bukti transfer</div>
+    </div>
+    <div class="bukti-preview hidden" id="bukti-preview-box">
+      <img id="bukti-preview-img" alt="Preview bukti">
+    </div>
+    <div class="upload-progress hidden" id="upload-progress-wrap">
+      <div class="upload-progress-bar" id="upload-progress-bar"></div>
+    </div>
+    <p class="error-text" id="konfirmasi-wd-error"></p>
+    <div class="modal-actions" style="margin-top:16px;">
+      <button class="btn btn-ghost" onclick="tutupModalKonfirmasiWd()">Batal</button>
+      <button class="btn btn-primary" id="btn-konfirmasi-wd-ok" onclick="eksekusiKonfirmasiWd()">✓ Konfirmasi Selesai</button>
+    </div>
+  </div>
+</div>
+
+<!-- GANTI PASSWORD MODAL -->
 <div class="overlay hidden" id="overlay-ganti-pass">
   <div class="modal-box" style="text-align:left;">
     <h3 id="gp-title">Ganti Kata Sandi</h3>
     <p id="gp-subtitle" style="font-size:13px;color:var(--ink-soft);margin:6px 0 16px;line-height:1.5;"></p>
     <label for="gp-lama" id="gp-lama-label">Kelas / Kata Sandi Saat Ini</label>
-    <div class="field-wrap">
-      <input type="password" id="gp-lama" placeholder="" autocomplete="off">
-      <button type="button" class="toggle-eye" onclick="toggleEye('gp-lama',this)" aria-label="Tampilkan">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-      </button>
-    </div>
+    <div class="field-wrap"><input type="password" id="gp-lama" placeholder="" autocomplete="off"><button type="button" class="toggle-eye" onclick="toggleEye('gp-lama',this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
     <label for="gp-baru">Kata Sandi Baru</label>
-    <div class="field-wrap">
-      <input type="password" id="gp-baru" placeholder="Minimal 4 karakter" autocomplete="off">
-      <button type="button" class="toggle-eye" onclick="toggleEye('gp-baru',this)" aria-label="Tampilkan">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-      </button>
-    </div>
+    <div class="field-wrap"><input type="password" id="gp-baru" placeholder="Minimal 4 karakter" autocomplete="off"><button type="button" class="toggle-eye" onclick="toggleEye('gp-baru',this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
     <label for="gp-baru2">Konfirmasi Kata Sandi Baru</label>
-    <div class="field-wrap">
-      <input type="password" id="gp-baru2" placeholder="Ketik ulang" autocomplete="off">
-      <button type="button" class="toggle-eye" onclick="toggleEye('gp-baru2',this)" aria-label="Tampilkan">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-      </button>
-    </div>
+    <div class="field-wrap"><input type="password" id="gp-baru2" placeholder="Ketik ulang" autocomplete="off"><button type="button" class="toggle-eye" onclick="toggleEye('gp-baru2',this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
     <p class="error-text" id="gp-error"></p>
     <div class="modal-actions" style="margin-top:16px;">
       <button class="btn btn-ghost" onclick="tutupGantiPassword()">Batal</button>
@@ -797,7 +678,7 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
   </div>
 </div>
 
-<!-- ======================= CONFIRM MODAL ======================= -->
+<!-- CONFIRM MODAL -->
 <div class="overlay hidden" id="overlay-confirm">
   <div class="modal-box">
     <h3 id="confirm-title">Konfirmasi</h3>
@@ -809,31 +690,25 @@ button.btn:disabled{opacity:.5;cursor:not-allowed;}
   </div>
 </div>
 
-<!-- ======================= STAMP MODAL ======================= -->
+<!-- STAMP MODAL -->
 <div class="overlay hidden" id="overlay-stamp">
   <div class="modal-box stamp-modal">
-    <div class="ring">
-      <span class="word">DICATAT</span>
-      <span class="small" id="stamp-petugas-nama">PETUGAS</span>
-    </div>
+    <div class="ring"><span class="word">DICATAT</span><span class="small" id="stamp-petugas-nama">PETUGAS</span></div>
     <div class="total" id="stamp-total">Rp 0</div>
     <div class="meta" id="stamp-meta">untuk —</div>
     <button class="btn btn-primary" onclick="tutupStamp()">Tutup</button>
   </div>
 </div>
 
-<!-- ======================= TOAST ======================= -->
 <div class="toast-host" id="toast-host"></div>
 
 <script>
 /* ============================================================
-   KONFIGURASI — ganti URL ini dengan URL Web App GAS Anda
+   KONFIGURASI
    ============================================================ */
 const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbysqKYPIEHM3ht56IKmyT1kZt5D2z64uVQKBPX--DgNjUEMn5AO1ocRonLrkYPIpu4F/exec";
 
-function isUrlConfigured(){
-  return typeof WEB_APP_URL==="string"&&WEB_APP_URL.startsWith("http");
-}
+function isUrlConfigured(){return typeof WEB_APP_URL==="string"&&WEB_APP_URL.startsWith("http");}
 
 /* ============================================================
    STATE
@@ -846,6 +721,36 @@ let logSesiPetugas=[];
 let gantiPassRole=null;
 let wdMetode="ewallet";
 let wdSaldoTersedia=0;
+// State untuk konfirmasi withdraw dengan bukti
+let konfirmasiWdData={id:null,namaMurid:null,jumlah:0};
+let buktiBlobData=null; // {base64, mimeType}
+// QR scan
+let qrVideoStream=null;
+let qrScanInterval=null;
+
+/* ============================================================
+   AUTO LOGIN — localStorage
+   ============================================================ */
+const SESSION_KEY="ttc_session_v2";
+
+function simpanSesi(){
+  try{localStorage.setItem(SESSION_KEY,JSON.stringify(session));}catch(e){}
+}
+
+function muatSesiTersimpan(){
+  try{
+    const raw=localStorage.getItem(SESSION_KEY);
+    if(!raw)return false;
+    const saved=JSON.parse(raw);
+    if(!saved||!saved.role||!saved.nama)return false;
+    session=saved;
+    return true;
+  }catch(e){return false;}
+}
+
+function hapusSesi(){
+  try{localStorage.removeItem(SESSION_KEY);}catch(e){}
+}
 
 /* ============================================================
    UTILITAS
@@ -897,7 +802,7 @@ function showConfirm(title,message){
   });
 }
 
-function toggleEye(id,btn){
+function toggleEye(id){
   const el=document.getElementById(id);
   el.type=el.type==="password"?"text":"password";
 }
@@ -911,39 +816,82 @@ function escapeHtml(s){
   return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
 }
 
-/* ============================================================
-   FIX #1: apiCall gunakan POST + JSON body agar items JSON
-   tidak corrupt saat di-encode via URLSearchParams (GET).
-   ============================================================ */
-async function apiCall(action, params){
-  if(!isUrlConfigured()){
-    showToast("URL belum diatur. Lihat pengaturan.","err");
-    bukaHalaman("page-setup");
-    return{status:"error",message:"URL belum diatur."};
-  }
+async function apiCall(action,params){
+  if(!isUrlConfigured()){showToast("URL belum diatur.","err");bukaHalaman("page-setup");return{status:"error",message:"URL belum diatur."};}
   try{
     const body=Object.assign({action},params||{});
-    const res=await fetch(WEB_APP_URL,{
-      method:"POST",
-      headers:{"Content-Type":"text/plain;charset=utf-8"},
-      body:JSON.stringify(body)
-    });
+    const res=await fetch(WEB_APP_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(body)});
     const text=await res.text();
     try{return JSON.parse(text);}
-    catch(e){
-      // Jika GAS mengembalikan HTML error, tangkap dan tampilkan
-      console.error("Non-JSON response:",text.substring(0,200));
-      return{status:"error",message:"Server mengembalikan respons tidak valid."};
-    }
+    catch(e){console.error("Non-JSON:",text.substring(0,200));return{status:"error",message:"Server mengembalikan respons tidak valid."};}
   }catch(err){
     console.error("apiCall error:",err);
-    showToast("Gagal terhubung ke server. Periksa koneksi.","err");
+    showToast("Gagal terhubung ke server.","err");
     return{status:"error",message:"network_error"};
   }
 }
 
 function bersihkanNama(v){return(v||"").toString().replace(/[^A-Za-z\s]/g,"").toUpperCase().replace(/\s+/g," ").trim();}
 function bersihkanKelas(v){return(v||"").toString().replace(/[^A-Za-z0-9\s]/g,"").toUpperCase().replace(/\s+/g," ").trim();}
+
+/* ============================================================
+   QR SCAN LIVE — getUserMedia + jsQR
+   ============================================================ */
+async function mulaiScanLive(){
+  document.getElementById("scan-frame-idle").classList.add("hidden");
+  document.getElementById("scan-live-wrap").classList.remove("hidden");
+  document.getElementById("scan-status").textContent="Memulai kamera...";
+
+  try{
+    const stream=await navigator.mediaDevices.getUserMedia({
+      video:{facingMode:"environment",width:{ideal:1280},height:{ideal:720}}
+    });
+    qrVideoStream=stream;
+    const video=document.getElementById("qr-video");
+    video.srcObject=stream;
+    await video.play();
+    document.getElementById("scan-status").textContent="Arahkan ke kode QR murid...";
+    // Scan setiap 400ms
+    qrScanInterval=setInterval(()=>scanFrameQR(),400);
+  }catch(err){
+    document.getElementById("scan-status").textContent="Kamera tidak bisa diakses: "+err.message;
+    showToast("Tidak bisa membuka kamera. Coba tab Cari Manual.","err");
+  }
+}
+
+function scanFrameQR(){
+  const video=document.getElementById("qr-video");
+  if(!video||video.readyState<2)return;
+  const canvas=document.getElementById("qr-canvas");
+  canvas.width=video.videoWidth;
+  canvas.height=video.videoHeight;
+  const ctx=canvas.getContext("2d");
+  ctx.drawImage(video,0,0,canvas.width,canvas.height);
+  const imageData=ctx.getImageData(0,0,canvas.width,canvas.height);
+  if(window.jsQR){
+    const code=jsQR(imageData.data,imageData.width,imageData.height,{inversionAttempts:"dontInvert"});
+    if(code&&code.data){
+      document.getElementById("scan-status").textContent="✓ QR terbaca!";
+      stopScanLive();
+      handleQRResult(code.data);
+    }
+  }
+}
+
+function stopScanLive(){
+  if(qrScanInterval){clearInterval(qrScanInterval);qrScanInterval=null;}
+  if(qrVideoStream){qrVideoStream.getTracks().forEach(t=>t.stop());qrVideoStream=null;}
+  document.getElementById("scan-live-wrap").classList.add("hidden");
+  document.getElementById("scan-frame-idle").classList.remove("hidden");
+}
+
+async function handleQRResult(teks){
+  const parts=(teks||"").split("|");
+  if(parts.length!==3||parts[0]!=="MURID"){
+    showToast("Kode QR tidak valid.","err");return;
+  }
+  await pilihMurid(parts[1],parts[2]);
+}
 
 /* ============================================================
    AUTENTIKASI
@@ -959,12 +907,11 @@ async function prosesLogin(){
   const res=await apiCall("login",{nama,kunci});
   setLoading(btn,false,"Memeriksa...","Masuk");
   if(res.status==="success"){
-    /* FIX #2: normalkan pembacaan role & data dari respons GAS
-       (beberapa implementasi GAS mengembalikan role di root, sebagian di data) */
     const role=res.role||res.data?.role||"";
     const dataNama=res.data?.nama||res.nama||nama;
     const dataKelas=res.data?.kelas||res.kelas||"";
     session={role,nama:dataNama,kelas:dataKelas};
+    simpanSesi();
     document.getElementById("login-nama").value="";
     document.getElementById("login-kunci").value="";
     if(role==="murid")masukDashboardMurid();
@@ -988,13 +935,12 @@ async function prosesRegisterMurid(){
   setLoading(btn,false,"Mendaftarkan...","Daftar & Masuk");
   if(res.status==="success"){
     session={role:"murid",nama,kelas};
+    simpanSesi();
     document.getElementById("rm-nama").value="";
     document.getElementById("rm-kelas").value="";
     showToast("Pendaftaran berhasil! Selamat datang, "+nama.split(" ")[0]+".","ok");
     masukDashboardMurid();
-  }else if(res.message!=="network_error"){
-    errEl.textContent=res.message||"Pendaftaran gagal.";
-  }
+  }else if(res.message!=="network_error"){errEl.textContent=res.message||"Pendaftaran gagal.";}
 }
 
 async function prosesRegisterPetugas(){
@@ -1011,34 +957,23 @@ async function prosesRegisterPetugas(){
   const res=await apiCall("register_petugas",{nama,password:pass});
   setLoading(btn,false,"Mendaftarkan...","Daftar — Tunggu Konfirmasi");
   if(res.status==="success"){
-    document.getElementById("rp-nama").value="";
-    document.getElementById("rp-pass").value="";
-    document.getElementById("rp-pass2").value="";
-    tampilkanHalamanPending(nama);
-  }else if(res.message!=="network_error"){
-    errEl.textContent=res.message||"Pendaftaran gagal.";
-  }
-}
-
-function tampilkanHalamanPending(nama){
-  showToast("Pendaftaran berhasil! Tunggu konfirmasi admin.","ok");
-  bukaHalaman("page-landing");
-  setTimeout(()=>{
-    const errEl=document.getElementById("login-error");
-    errEl.style.color="var(--pending)";
-    errEl.textContent="Pendaftaran petugas berhasil. Akun "+nama.split(" ")[0]+" sedang menunggu konfirmasi admin.";
-  },400);
+    document.getElementById("rp-nama").value="";document.getElementById("rp-pass").value="";document.getElementById("rp-pass2").value="";
+    showToast("Pendaftaran berhasil! Tunggu konfirmasi admin.","ok");
+    bukaHalaman("page-landing");
+    setTimeout(()=>{const errEl=document.getElementById("login-error");errEl.style.color="var(--pending)";errEl.textContent="Akun "+nama.split(" ")[0]+" sedang menunggu konfirmasi admin.";},400);
+  }else if(res.message!=="network_error"){errEl.textContent=res.message||"Pendaftaran gagal.";}
 }
 
 function logout(){
+  stopScanLive();
+  hapusSesi();
   session={role:null,nama:null,kelas:null};
   keranjang=[];muridTerpilih=null;logSesiPetugas=[];
-  resetScanFrame();
   bukaHalaman("page-landing");
 }
 
 /* ============================================================
-   ADMIN LOGIN
+   ADMIN
    ============================================================ */
 async function prosesAdminLogin(){
   const username=bersihkanNama(document.getElementById("al-user").value);
@@ -1052,21 +987,13 @@ async function prosesAdminLogin(){
   setLoading(btn,false,"Memeriksa...","Masuk Panel Admin");
   if(res.status==="success"){
     session={role:"admin",nama:res.data?.nama||username};
+    simpanSesi();
     document.getElementById("al-pass").value="";
     masukDashboardAdmin();
-  }else if(res.message!=="network_error"){
-    errEl.textContent=res.message||"Login admin gagal.";
-  }
+  }else if(res.message!=="network_error"){errEl.textContent=res.message||"Login admin gagal.";}
 }
 
-function logoutAdmin(){
-  session={role:null,nama:null,kelas:null};
-  bukaHalaman("page-landing");
-}
-
-/* ============================================================
-   ADMIN DASHBOARD
-   ============================================================ */
+function logoutAdmin(){hapusSesi();session={role:null,nama:null,kelas:null};bukaHalaman("page-landing");}
 function masukDashboardAdmin(){bukaHalaman("page-admin");muatAdminDashboard();}
 
 async function muatAdminDashboard(){
@@ -1078,11 +1005,8 @@ async function muatAdminDashboard(){
     document.getElementById("stat-aktif").textContent=d.petugasAktif??0;
     document.getElementById("stat-pending").textContent=d.petugasPending??0;
     const rekapEl=document.getElementById("admin-rekap-kelas");
-    if(!d.rekapKelas||!d.rekapKelas.length){
-      rekapEl.innerHTML='<div class="empty-state">Belum ada data setoran.</div>';
-    }else{
-      rekapEl.innerHTML=d.rekapKelas.map(r=>`<div class="rekap-kelas-row"><span class="kls-nm">${escapeHtml(r.kelas)}</span><span class="kls-total">${formatRupiah(r.total)}</span></div>`).join("");
-    }
+    if(!d.rekapKelas||!d.rekapKelas.length){rekapEl.innerHTML='<div class="empty-state">Belum ada data setoran.</div>';}
+    else{rekapEl.innerHTML=d.rekapKelas.map(r=>`<div class="rekap-kelas-row"><span class="kls-nm">${escapeHtml(r.kelas)}</span><span class="kls-total">${formatRupiah(r.total)}</span></div>`).join("");}
   }
   await muatDaftarPetugas();
 }
@@ -1090,7 +1014,7 @@ async function muatAdminDashboard(){
 async function muatDaftarPetugas(){
   const res=await apiCall("admin_get_petugas",{});
   const el=document.getElementById("admin-petugas-list");
-  if(res.status!=="success"){el.innerHTML='<div class="empty-state">Gagal memuat daftar petugas.</div>';return;}
+  if(res.status!=="success"){el.innerHTML='<div class="empty-state">Gagal memuat.</div>';return;}
   const list=res.data||[];
   if(!list.length){el.innerHTML='<div class="empty-state">Belum ada petugas terdaftar.</div>';return;}
   el.innerHTML=list.map(p=>{
@@ -1099,49 +1023,23 @@ async function muatDaftarPetugas(){
     const badgeTxt=status==="AKTIF"?"Aktif":status==="PENDING"?"Menunggu":"Ditolak";
     const tgl=p.tanggal?formatTanggal(p.tanggal):"—";
     let actions="";
-    if(status==="PENDING"){
-      actions+=`<button class="btn btn-primary btn-sm" onclick="adminVerifikasi('${escapeHtml(p.nama)}')">✓ Aktifkan</button>`;
-      actions+=`<button class="btn btn-ghost btn-sm" style="color:var(--stamp);border-color:var(--stamp);" onclick="adminTolak('${escapeHtml(p.nama)}')">✕ Tolak</button>`;
-    }else if(status==="DITOLAK"){
-      actions+=`<button class="btn btn-primary btn-sm" onclick="adminVerifikasi('${escapeHtml(p.nama)}')">✓ Aktifkan</button>`;
-    }else{
-      actions+=`<button class="btn btn-ghost btn-sm" style="color:var(--stamp);border-color:var(--stamp);" onclick="adminTolak('${escapeHtml(p.nama)}')">Nonaktifkan</button>`;
-    }
+    if(status==="PENDING"){actions+=`<button class="btn btn-primary btn-sm" onclick="adminVerifikasi('${escapeHtml(p.nama)}')">✓ Aktifkan</button><button class="btn btn-ghost btn-sm" style="color:var(--stamp);border-color:var(--stamp);" onclick="adminTolak('${escapeHtml(p.nama)}')">✕ Tolak</button>`;}
+    else if(status==="DITOLAK"){actions+=`<button class="btn btn-primary btn-sm" onclick="adminVerifikasi('${escapeHtml(p.nama)}')">✓ Aktifkan</button>`;}
+    else{actions+=`<button class="btn btn-ghost btn-sm" style="color:var(--stamp);border-color:var(--stamp);" onclick="adminTolak('${escapeHtml(p.nama)}')">Nonaktifkan</button>`;}
     actions+=`<button class="btn btn-ghost btn-sm" style="color:var(--stamp);" onclick="adminHapusPetugas('${escapeHtml(p.nama)}')">Hapus</button>`;
     return`<div class="petugas-row"><div class="pinfo"><div class="pnama">${escapeHtml(p.nama)}</div><div style="display:flex;align-items:center;gap:6px;margin-top:4px;"><span class="badge ${badgeClass}">${badgeTxt}</span><span class="ptgl">${tgl}</span></div></div><div class="pactions">${actions}</div></div>`;
   }).join("");
 }
 
-async function adminVerifikasi(nama){
-  const ok=await showConfirm("Aktifkan Petugas","Aktifkan akun petugas atas nama "+nama+"?");
-  if(!ok)return;
-  const res=await apiCall("admin_verifikasi",{nama});
-  if(res.status==="success"){showToast(nama+" berhasil diaktifkan.","ok");await muatAdminDashboard();}
-  else showToast(res.message||"Gagal.","err");
-}
-
-async function adminTolak(nama){
-  const ok=await showConfirm("Tolak / Nonaktifkan","Ubah status petugas "+nama+" menjadi DITOLAK/nonaktif?");
-  if(!ok)return;
-  const res=await apiCall("admin_tolak",{nama});
-  if(res.status==="success"){showToast(nama+" ditolak/dinonaktifkan.","ok");await muatAdminDashboard();}
-  else showToast(res.message||"Gagal.","err");
-}
-
-async function adminHapusPetugas(nama){
-  const ok=await showConfirm("Hapus Petugas","Hapus permanent akun petugas "+nama+"? Tidak bisa dibatalkan.");
-  if(!ok)return;
-  const res=await apiCall("admin_hapus_petugas",{nama});
-  if(res.status==="success"){showToast(nama+" dihapus.","ok");await muatAdminDashboard();}
-  else showToast(res.message||"Gagal.","err");
-}
+async function adminVerifikasi(nama){const ok=await showConfirm("Aktifkan Petugas","Aktifkan akun "+nama+"?");if(!ok)return;const res=await apiCall("admin_verifikasi",{nama});if(res.status==="success"){showToast(nama+" berhasil diaktifkan.","ok");await muatAdminDashboard();}else showToast(res.message||"Gagal.","err");}
+async function adminTolak(nama){const ok=await showConfirm("Tolak","Nonaktifkan petugas "+nama+"?");if(!ok)return;const res=await apiCall("admin_tolak",{nama});if(res.status==="success"){showToast(nama+" ditolak.","ok");await muatAdminDashboard();}else showToast(res.message||"Gagal.","err");}
+async function adminHapusPetugas(nama){const ok=await showConfirm("Hapus Petugas","Hapus permanent akun "+nama+"?");if(!ok)return;const res=await apiCall("admin_hapus_petugas",{nama});if(res.status==="success"){showToast(nama+" dihapus.","ok");await muatAdminDashboard();}else showToast(res.message||"Gagal.","err");}
 
 async function prosesGantiPassAdmin(){
   const lama=document.getElementById("ap-lama").value.trim();
   const baru=document.getElementById("ap-baru").value.trim();
   const baru2=document.getElementById("ap-baru2").value.trim();
-  const errEl=document.getElementById("ap-error");
-  const sukEl=document.getElementById("ap-success");
+  const errEl=document.getElementById("ap-error");const sukEl=document.getElementById("ap-success");
   errEl.textContent="";sukEl.textContent="";
   if(!lama||!baru){errEl.textContent="Isi semua kolom kata sandi.";return;}
   if(baru.length<6){errEl.textContent="Kata sandi baru minimal 6 karakter.";return;}
@@ -1150,10 +1048,8 @@ async function prosesGantiPassAdmin(){
   setLoading(btn,true,"Menyimpan...","Perbarui Kata Sandi Admin");
   const res=await apiCall("admin_ganti_pass",{passwordLama:lama,passwordBaru:baru});
   setLoading(btn,false,"Menyimpan...","Perbarui Kata Sandi Admin");
-  if(res.status==="success"){
-    sukEl.textContent="Kata sandi admin berhasil diperbarui!";
-    document.getElementById("ap-lama").value="";document.getElementById("ap-baru").value="";document.getElementById("ap-baru2").value="";
-  }else{errEl.textContent=res.message||"Gagal mengubah kata sandi.";}
+  if(res.status==="success"){sukEl.textContent="Kata sandi admin berhasil diperbarui!";document.getElementById("ap-lama").value="";document.getElementById("ap-baru").value="";document.getElementById("ap-baru2").value="";}
+  else{errEl.textContent=res.message||"Gagal mengubah kata sandi.";}
 }
 
 /* ============================================================
@@ -1161,21 +1057,11 @@ async function prosesGantiPassAdmin(){
    ============================================================ */
 function bukaGantiPassword(role){
   gantiPassRole=role;
-  const overlay=document.getElementById("overlay-ganti-pass");
   document.getElementById("gp-error").textContent="";
   document.getElementById("gp-lama").value="";document.getElementById("gp-baru").value="";document.getElementById("gp-baru2").value="";
-  if(role==="murid"){
-    document.getElementById("gp-title").textContent="Ganti Kata Sandi Murid";
-    document.getElementById("gp-subtitle").textContent="Verifikasi identitasmu dengan memasukkan kelasmu dulu.";
-    document.getElementById("gp-lama-label").textContent="Kelas (Verifikasi Identitas)";
-    document.getElementById("gp-lama").placeholder="Contoh: 11 TEI A";
-  }else{
-    document.getElementById("gp-title").textContent="Ganti Kata Sandi Petugas";
-    document.getElementById("gp-subtitle").textContent="Masukkan kata sandi lama untuk konfirmasi, lalu isi kata sandi baru.";
-    document.getElementById("gp-lama-label").textContent="Kata Sandi Saat Ini";
-    document.getElementById("gp-lama").placeholder="Kata sandi saat ini";
-  }
-  overlay.classList.remove("hidden");
+  if(role==="murid"){document.getElementById("gp-title").textContent="Ganti Kata Sandi Murid";document.getElementById("gp-subtitle").textContent="Verifikasi identitasmu dengan memasukkan kelasmu dulu.";document.getElementById("gp-lama-label").textContent="Kelas (Verifikasi Identitas)";document.getElementById("gp-lama").placeholder="Contoh: 11 TEI A";}
+  else{document.getElementById("gp-title").textContent="Ganti Kata Sandi Petugas";document.getElementById("gp-subtitle").textContent="Masukkan kata sandi lama untuk konfirmasi, lalu isi kata sandi baru.";document.getElementById("gp-lama-label").textContent="Kata Sandi Saat Ini";document.getElementById("gp-lama").placeholder="Kata sandi saat ini";}
+  document.getElementById("overlay-ganti-pass").classList.remove("hidden");
 }
 
 function tutupGantiPassword(){document.getElementById("overlay-ganti-pass").classList.add("hidden");}
@@ -1202,91 +1088,89 @@ async function prosesGantiPassword(){
    ============================================================ */
 function masukDashboardMurid(){
   bukaHalaman("page-murid");
-  /* FIX #3: Isi semua elemen nama & kelas dengan benar */
-  const nama=session.nama||"—";
-  const kelas=session.kelas||"—";
+  const nama=session.nama||"—";const kelas=session.kelas||"—";
   document.getElementById("murid-nama-text").textContent=nama;
   document.getElementById("murid-nama-text-2").textContent=nama;
   document.getElementById("murid-kelas-text").textContent=kelas;
-  renderQrMurid();
-  muatDashboardMurid();
+  renderQrMurid();muatDashboardMurid();
 }
 
 function renderQrMurid(){
   const teks="MURID|"+session.nama+"|"+session.kelas;
   const container=document.getElementById("qr-murid");
   container.innerHTML="";
-  if(window.QRCode){
-    new QRCode(container,{text:teks,width:84,height:84,colorDark:"#2F4A3D",colorLight:"#FBF8F0",correctLevel:QRCode.CorrectLevel.M});
-  }else{
-    // Coba lagi setelah library dimuat
-    setTimeout(()=>{
-      if(window.QRCode){
-        new QRCode(container,{text:teks,width:84,height:84,colorDark:"#2F4A3D",colorLight:"#FBF8F0",correctLevel:QRCode.CorrectLevel.M});
-      }
-    },800);
-  }
+  const tryRender=()=>{
+    if(window.QRCode){new QRCode(container,{text:teks,width:84,height:84,colorDark:"#2F4A3D",colorLight:"#FBF8F0",correctLevel:QRCode.CorrectLevel.M});}
+    else{setTimeout(tryRender,500);}
+  };
+  tryRender();
 }
 
 async function muatDashboardMurid(){
-  /* FIX #4: Kirim nama & kelas yang sudah di-trim dari session */
   const nama=(session.nama||"").trim();
   const kelas=(session.kelas||"").trim();
-  if(!nama||!kelas){
-    showToast("Sesi tidak valid, silakan login ulang.","err");
-    logout();return;
-  }
+  if(!nama||!kelas){showToast("Sesi tidak valid, silakan login ulang.","err");logout();return;}
 
   const res=await apiCall("get_riwayat_murid",{nama,kelas});
-  if(res.status!=="success"){
-    showToast(res.message||"Gagal memuat data. Coba muat ulang.","err");
-    return;
-  }
+  if(res.status!=="success"){showToast(res.message||"Gagal memuat data.","err");return;}
   const data=res.data;
 
-  /* FIX #5: Hitung saldo dengan benar — gunakan totalSaldo dari server,
-     fallback ke sum riwayat jika server tidak mengembalikannya */
+  // Gunakan totalSaldo langsung dari server (sudah dikurangi withdraw selesai)
   const saldo=Number(data.totalSaldo)??0;
   wdSaldoTersedia=saldo;
   document.getElementById("murid-total-saldo").textContent=formatRupiah(saldo);
 
-  /* Rekap grid */
+  // Rekap grid
   const grid=document.getElementById("murid-rekap-grid");
   const rekap=data.rekap||[];
-  if(!rekap.length){
-    grid.innerHTML='<div class="empty-state" style="grid-column:1/-1;">'+iconLeaf()+'<div>Belum ada setoran sampah tercatat.</div></div>';
-  }else{
-    grid.innerHTML=rekap.map(r=>`<div class="rekap-card"><div class="icon">${iconForType(r.jenis)}</div><div class="jenis">${escapeHtml(r.jenis)}</div><div class="jumlah">${r.jumlah} ${escapeHtml(r.satuan||"")}</div><div class="total">${formatRupiah(r.total)}</div></div>`).join("");
-  }
+  if(!rekap.length){grid.innerHTML='<div class="empty-state" style="grid-column:1/-1;">'+iconLeaf()+'<div>Belum ada setoran sampah tercatat.</div></div>';}
+  else{grid.innerHTML=rekap.map(r=>`<div class="rekap-card"><div class="icon">${iconForType(r.jenis)}</div><div class="jenis">${escapeHtml(r.jenis)}</div><div class="jumlah">${r.jumlah} ${escapeHtml(r.satuan||"")}</div><div class="total">${formatRupiah(r.total)}</div></div>`).join("");}
 
-  /* Riwayat Withdraw */
+  // Riwayat withdraw — dengan bukti
   const wdEl=document.getElementById("murid-withdraw-list");
   const wdRes=await apiCall("get_withdraw_murid",{nama,kelas});
   if(wdRes.status==="success"&&wdRes.data&&wdRes.data.length){
-    wdEl.innerHTML=wdRes.data.map(w=>{
+    const wdItems=wdRes.data;
+    let wdHtml="";
+    for(const w of wdItems){
       const st=String(w.status||"pending").toLowerCase();
       const cls=st==="selesai"?"wd-selesai":st==="ditolak"?"wd-ditolak":"wd-pending";
       const badge=st==="selesai"?"badge-selesai":st==="ditolak"?"badge-ditolak":"badge-pending";
       const teks=st==="selesai"?"Selesai":st==="ditolak"?"Ditolak":"Menunggu";
-      return`<div class="withdraw-entry ${cls}">
+
+      // Cek bukti dari catatan
+      let buktiHtml="";
+      const catatan=String(w.catatan||"");
+      if(catatan.startsWith("BUKTI:")){
+        const parts=catatan.split("|");
+        const buktiUrl=parts[0].replace("BUKTI:","");
+        const catatanBersih=parts.slice(1).join("|");
+        buktiHtml=`<div class="bukti-img"><img src="${escapeHtml(buktiUrl)}" alt="Bukti transfer" onerror="this.style.display='none'"><a href="${escapeHtml(buktiUrl)}" target="_blank">📎 Lihat Bukti Transfer</a></div>`;
+        w.catatan=catatanBersih;
+      }else if(st==="selesai"){
+        buktiHtml=`<div style="font-size:12px;color:var(--ink-soft);margin-top:6px;">Bukti transfer tidak diunggah.</div>`;
+      }
+
+      wdHtml+=`<div class="withdraw-entry ${cls}">
         <div class="wd-head"><div class="wd-amount">${formatRupiah(w.jumlah)}</div><span class="badge ${badge}">${teks}</span></div>
         <div class="wd-meta">
           <b>${escapeHtml(w.metode||"")}</b>${w.platform?" · "+escapeHtml(w.platform):""}${w.nohp?" · "+escapeHtml(w.nohp):""}${w.norek?" · "+escapeHtml(w.norek):""}<br>
           ${escapeHtml(w.namaPenerima||"")}${w.namaPenerima?" · ":""}${formatTanggal(w.timestamp)}
-          ${w.catatan?'<br><span style="color:var(--stamp);">Catatan: '+escapeHtml(w.catatan)+'</span>':""}
+          ${w.catatan&&!w.catatan.startsWith("BUKTI:")?'<br><span style="color:var(--stamp);">Catatan: '+escapeHtml(w.catatan)+'</span>':""}
         </div>
+        ${buktiHtml}
       </div>`;
-    }).join("");
+    }
+    wdEl.innerHTML=wdHtml;
   }else{
     wdEl.innerHTML='<div class="empty-state" style="padding:14px 0 4px;font-size:13px;color:var(--ink-soft);">Belum ada riwayat penarikan.</div>';
   }
 
-  /* Ledger setoran */
+  // Ledger setoran
   const ledger=document.getElementById("murid-ledger-list");
   const riwayat=data.riwayat||[];
-  if(!riwayat.length){
-    ledger.innerHTML='<div class="empty-state">'+iconRecycleSmall()+'<div>Catatan setoran akan muncul di sini.</div></div>';
-  }else{
+  if(!riwayat.length){ledger.innerHTML='<div class="empty-state">'+iconRecycleSmall()+'<div>Catatan setoran akan muncul di sini.</div></div>';}
+  else{
     const batches=kelompokkanBerdasarkanBatch(riwayat);
     ledger.innerHTML=batches.map((b,idx)=>{
       const noUrut=batches.length-idx;
@@ -1301,12 +1185,8 @@ function kelompokkanBerdasarkanBatch(riwayat){
   const map={},order=[];
   riwayat.forEach(row=>{
     const key=row.batchId||(row.timestamp+"|"+(row.namaPetugas||""));
-    if(!map[key]){
-      map[key]={timestamp:row.timestamp,namaPetugas:row.namaPetugas||"",items:[],subtotal:0};
-      order.push(key);
-    }
-    map[key].items.push(row);
-    map[key].subtotal+=Number(row.total)||0;
+    if(!map[key]){map[key]={timestamp:row.timestamp,namaPetugas:row.namaPetugas||"",items:[],subtotal:0};order.push(key);}
+    map[key].items.push(row);map[key].subtotal+=Number(row.total)||0;
   });
   return order.map(k=>map[k]);
 }
@@ -1322,12 +1202,7 @@ function inisialNama(nama){
    WITHDRAW — MURID
    ============================================================ */
 function bukaModalWithdraw(){
-  document.getElementById("wd-jumlah").value="";
-  document.getElementById("wd-ew-nama").value="";
-  document.getElementById("wd-ew-nohp").value="";
-  document.getElementById("wd-bank-nama").value="";
-  document.getElementById("wd-bank-norek").value="";
-  document.getElementById("wd-error").textContent="";
+  document.getElementById("wd-jumlah").value="";document.getElementById("wd-ew-nama").value="";document.getElementById("wd-ew-nohp").value="";document.getElementById("wd-bank-nama").value="";document.getElementById("wd-bank-norek").value="";document.getElementById("wd-error").textContent="";
   document.getElementById("wd-saldo-tersedia").textContent=formatRupiah(wdSaldoTersedia);
   pilihMetodeWd("ewallet");
   document.getElementById("overlay-withdraw").classList.remove("hidden");
@@ -1337,10 +1212,7 @@ function tutupModalWithdraw(){document.getElementById("overlay-withdraw").classL
 
 function pilihMetodeWd(m){
   wdMetode=m;
-  ["ewallet","bank","cash"].forEach(x=>{
-    document.getElementById("wd-btn-"+x).classList.toggle("active",x===m);
-    document.getElementById("wd-form-"+x).classList.toggle("hidden",x!==m);
-  });
+  ["ewallet","bank","cash"].forEach(x=>{document.getElementById("wd-btn-"+x).classList.toggle("active",x===m);document.getElementById("wd-form-"+x).classList.toggle("hidden",x!==m);});
 }
 
 async function kirimRequestWithdraw(){
@@ -1349,45 +1221,26 @@ async function kirimRequestWithdraw(){
   errEl.textContent="";
   if(jumlah<1000){errEl.textContent="Jumlah penarikan minimal Rp 1.000.";return;}
   if(jumlah>wdSaldoTersedia){errEl.textContent="Jumlah melebihi saldo tersedia ("+formatRupiah(wdSaldoTersedia)+").";return;}
-
-  let params={
-    namaMurid:session.nama,
-    kelas:session.kelas,
-    jumlah,
-    metode:wdMetode
-  };
-
+  let params={namaMurid:session.nama,kelas:session.kelas,jumlah,metode:wdMetode};
   if(wdMetode==="ewallet"){
-    const nama=document.getElementById("wd-ew-nama").value.trim();
-    const nohp=document.getElementById("wd-ew-nohp").value.trim();
-    const platform=document.getElementById("wd-ew-platform").value;
+    const nama=document.getElementById("wd-ew-nama").value.trim();const nohp=document.getElementById("wd-ew-nohp").value.trim();const platform=document.getElementById("wd-ew-platform").value;
     if(!nama||!nohp){errEl.textContent="Isi nama dan nomor HP e-wallet.";return;}
     params.namaPenerima=nama;params.platform=platform;params.nohp=nohp;
   }else if(wdMetode==="bank"){
-    const nama=document.getElementById("wd-bank-nama").value.trim();
-    const norek=document.getElementById("wd-bank-norek").value.trim();
-    const namaBank=document.getElementById("wd-bank-nama-bank").value;
+    const nama=document.getElementById("wd-bank-nama").value.trim();const norek=document.getElementById("wd-bank-norek").value.trim();const namaBank=document.getElementById("wd-bank-nama-bank").value;
     if(!nama||!norek){errEl.textContent="Isi nama pemilik rekening dan nomor rekening.";return;}
     params.namaPenerima=nama;params.namaBank=namaBank;params.norek=norek;
-  }else{
-    params.namaPenerima=session.nama;
-  }
-
+  }else{params.namaPenerima=session.nama;}
   const btn=document.getElementById("btn-wd-kirim");
   setLoading(btn,true,"Mengirim...","Kirim Request");
   const res=await apiCall("request_withdraw",params);
   setLoading(btn,false,"Mengirim...","Kirim Request");
-  if(res.status==="success"){
-    showToast("Request penarikan berhasil dikirim!","ok");
-    tutupModalWithdraw();
-    muatDashboardMurid();
-  }else if(res.message!=="network_error"){
-    errEl.textContent=res.message||"Gagal mengirim request.";
-  }
+  if(res.status==="success"){showToast("Request penarikan berhasil dikirim!","ok");tutupModalWithdraw();muatDashboardMurid();}
+  else if(res.message!=="network_error"){errEl.textContent=res.message||"Gagal mengirim request.";}
 }
 
 /* ============================================================
-   WITHDRAW — PETUGAS
+   WITHDRAW — PETUGAS (dengan upload bukti)
    ============================================================ */
 function gantiTabPetugasUtama(tab){
   const isSetoran=tab==="setoran";
@@ -1406,13 +1259,9 @@ async function muatRequestWithdraw(){
   const res=await apiCall("get_semua_withdraw",{});
   if(res.status!=="success"){el.innerHTML='<div class="keranjang-empty">Gagal memuat data.</div>';return;}
   const list=(res.data||[]).filter(w=>String(w.status||"").toLowerCase()==="pending");
-
   const badge=document.getElementById("badge-wd-count");
-  if(list.length>0){badge.textContent=list.length;badge.style.display="inline";}
-  else{badge.style.display="none";}
-
+  if(list.length>0){badge.textContent=list.length;badge.style.display="inline";}else{badge.style.display="none";}
   if(!list.length){el.innerHTML='<div class="empty-state">'+iconLeaf()+'<div>Tidak ada request penarikan yang menunggu.</div></div>';return;}
-
   el.innerHTML=list.map(w=>{
     const metodeLabel=w.metode==="ewallet"?"E-Wallet":w.metode==="bank"?"Transfer Bank":"Tunai";
     let detail="";
@@ -1423,32 +1272,89 @@ async function muatRequestWithdraw(){
     const namaStr=escapeHtml(String(w.namaMurid||""));
     return`<div class="wd-req-card urgent">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;">
-        <div>
-          <div class="wd-req-murid">${namaStr}</div>
-          <div class="wd-req-kelas">${escapeHtml(w.kelas||"")}</div>
-        </div>
+        <div><div class="wd-req-murid">${namaStr}</div><div class="wd-req-kelas">${escapeHtml(w.kelas||"")}</div></div>
         <span class="badge badge-pending">Pending</span>
       </div>
       <div class="wd-req-amount">${formatRupiah(w.jumlah)}</div>
-      <div class="wd-req-detail">
-        <b>${metodeLabel}</b> · a.n. ${escapeHtml(w.namaPenerima||w.namaMurid||"")}<br>
-        ${detail}<br>
-        <span style="color:var(--ink-soft);">Diminta: ${formatTanggal(w.timestamp)}</span>
-      </div>
+      <div class="wd-req-detail"><b>${metodeLabel}</b> · a.n. ${escapeHtml(w.namaPenerima||w.namaMurid||"")}<br>${detail}<br><span style="color:var(--ink-soft);">Diminta: ${formatTanggal(w.timestamp)}</span></div>
       <div class="wd-req-actions">
-        <button class="btn btn-primary btn-sm" onclick="konfirmasiWithdraw('${idStr}','${namaStr}',${Number(w.jumlah)||0})">✓ Konfirmasi Selesai</button>
+        <button class="btn btn-primary btn-sm" onclick="bukaModalKonfirmasiWd('${idStr}','${namaStr}',${Number(w.jumlah)||0})">📎 Upload Bukti &amp; Konfirmasi</button>
         <button class="btn btn-ghost btn-sm" style="color:var(--stamp);border-color:var(--stamp);" onclick="tolakWithdraw('${idStr}','${namaStr}')">✕ Tolak</button>
       </div>
     </div>`;
   }).join("");
 }
 
-async function konfirmasiWithdraw(id,namaMurid,jumlah){
-  const ok=await showConfirm("Konfirmasi Penarikan","Tandai penarikan "+formatRupiah(jumlah)+" untuk "+namaMurid+" sebagai SELESAI? Saldo murid akan dikurangi.");
-  if(!ok)return;
-  const res=await apiCall("konfirmasi_withdraw",{id,namaPetugas:session.nama});
-  if(res.status==="success"){showToast("Penarikan dikonfirmasi selesai.","ok");muatRequestWithdraw();}
-  else showToast(res.message||"Gagal.","err");
+/* Modal konfirmasi dengan upload bukti */
+function bukaModalKonfirmasiWd(id,namaMurid,jumlah){
+  konfirmasiWdData={id,namaMurid,jumlah};
+  buktiBlobData=null;
+  document.getElementById("konfirmasi-wd-info").textContent=`Penarikan ${formatRupiah(jumlah)} untuk ${namaMurid}. Upload foto bukti transfer sebelum konfirmasi.`;
+  document.getElementById("konfirmasi-wd-error").textContent="";
+  document.getElementById("bukti-file-input").value="";
+  document.getElementById("bukti-preview-box").classList.add("hidden");
+  document.getElementById("upload-progress-wrap").classList.add("hidden");
+  document.getElementById("upload-progress-bar").style.width="0%";
+  document.getElementById("overlay-konfirmasi-wd").classList.remove("hidden");
+}
+
+function tutupModalKonfirmasiWd(){document.getElementById("overlay-konfirmasi-wd").classList.add("hidden");}
+
+function pratinjaiBukti(input){
+  const file=input.files&&input.files[0];
+  if(!file)return;
+  const reader=new FileReader();
+  reader.onload=function(e){
+    const dataUrl=e.target.result;
+    document.getElementById("bukti-preview-img").src=dataUrl;
+    document.getElementById("bukti-preview-box").classList.remove("hidden");
+    // Simpan base64 (tanpa prefix)
+    const base64=dataUrl.split(",")[1];
+    buktiBlobData={base64,mimeType:file.type||"image/jpeg"};
+  };
+  reader.readAsDataURL(file);
+}
+
+async function eksekusiKonfirmasiWd(){
+  const errEl=document.getElementById("konfirmasi-wd-error");
+  errEl.textContent="";
+  const btn=document.getElementById("btn-konfirmasi-wd-ok");
+  setLoading(btn,true,"Memproses...","✓ Konfirmasi Selesai");
+
+  // Upload bukti dulu jika ada
+  if(buktiBlobData){
+    document.getElementById("upload-progress-wrap").classList.remove("hidden");
+    // Animasi progress palsu
+    let prog=0;
+    const progInterval=setInterval(()=>{prog=Math.min(prog+10,85);document.getElementById("upload-progress-bar").style.width=prog+"%";},300);
+
+    const uploadRes=await apiCall("upload_bukti",{
+      withdrawId:konfirmasiWdData.id,
+      base64Data:buktiBlobData.base64,
+      mimeType:buktiBlobData.mimeType,
+      namaMurid:konfirmasiWdData.namaMurid,
+      jumlah:konfirmasiWdData.jumlah,
+      namaPetugas:session.nama
+    });
+
+    clearInterval(progInterval);
+    document.getElementById("upload-progress-bar").style.width="100%";
+
+    if(uploadRes.status!=="success"){
+      setLoading(btn,false,"Memproses...","✓ Konfirmasi Selesai");
+      errEl.textContent="Gagal upload bukti: "+(uploadRes.message||"coba lagi");
+      return;
+    }
+  }
+
+  // Konfirmasi withdraw
+  const res=await apiCall("konfirmasi_withdraw",{id:konfirmasiWdData.id,namaPetugas:session.nama});
+  setLoading(btn,false,"Memproses...","✓ Konfirmasi Selesai");
+  if(res.status==="success"){
+    showToast("Penarikan dikonfirmasi"+(buktiBlobData?" + bukti tersimpan di Drive":"")+"!","ok");
+    tutupModalKonfirmasiWd();
+    muatRequestWithdraw();
+  }else{errEl.textContent=res.message||"Gagal konfirmasi.";}
 }
 
 async function tolakWithdraw(id,namaMurid){
@@ -1465,17 +1371,13 @@ async function tolakWithdraw(id,namaMurid){
 function masukDashboardPetugas(){
   bukaHalaman("page-petugas");
   document.getElementById("petugas-nama-text").textContent=session.nama||"—";
-  resetMuridTerpilih();
-  keranjang=[];renderKeranjang();
-  logSesiPetugas=[];renderLogSesi();
+  resetMuridTerpilih();keranjang=[];renderKeranjang();logSesiPetugas=[];renderLogSesi();
   muatJenisSampah();
-  /* Cek pending withdraw untuk badge */
   apiCall("get_semua_withdraw",{}).then(res=>{
     if(res.status==="success"){
       const pending=(res.data||[]).filter(w=>String(w.status||"").toLowerCase()==="pending").length;
       const badge=document.getElementById("badge-wd-count");
-      if(pending>0){badge.textContent=pending;badge.style.display="inline";}
-      else{badge.style.display="none";}
+      if(pending>0){badge.textContent=pending;badge.style.display="inline";}else{badge.style.display="none";}
     }
   }).catch(()=>{});
 }
@@ -1486,22 +1388,18 @@ function gantiTabPetugas(tab){
   document.getElementById("tab-manual").classList.toggle("active",!isScan);
   document.getElementById("panel-scan").classList.toggle("hidden",!isScan);
   document.getElementById("panel-manual").classList.toggle("hidden",isScan);
+  if(!isScan)stopScanLive();
 }
 
 async function muatJenisSampah(){
   const res=await apiCall("get_jenis_sampah",{});
   jenisSampahList=res.status==="success"?(res.data||[]):[];
-  renderSelectJenisSampah();
-  updateSubtotalPreview();
-  renderTabelKelolaJenis();
+  renderSelectJenisSampah();updateSubtotalPreview();renderTabelKelolaJenis();
 }
 
 function renderSelectJenisSampah(){
   const select=document.getElementById("jenis-sampah-select");
-  if(!jenisSampahList.length){
-    select.innerHTML='<option value="">— Tambahkan jenis sampah terlebih dahulu —</option>';
-    return;
-  }
+  if(!jenisSampahList.length){select.innerHTML='<option value="">— Tambahkan jenis sampah terlebih dahulu —</option>';return;}
   select.innerHTML=jenisSampahList.map((j,i)=>`<option value="${i}">${escapeHtml(j.nama)} — ${formatRupiah(j.harga)}/${escapeHtml(j.satuan)}</option>`).join("");
   updateJumlahInputStep();
 }
@@ -1510,12 +1408,9 @@ function updateJumlahInputStep(){
   if(!jenisSampahList.length)return;
   const val=document.getElementById("jenis-sampah-select").value;
   if(val==="")return;
-  const idx=Number(val)||0;
-  const j=jenisSampahList[idx];
-  if(!j)return;
+  const idx=Number(val)||0;const j=jenisSampahList[idx];if(!j)return;
   const input=document.getElementById("jumlah-sampah");
-  if(j.satuan==="kg"){input.step="0.1";input.min="0.1";}
-  else{input.step="1";input.min="1";}
+  if(j.satuan==="kg"){input.step="0.1";input.min="0.1";}else{input.step="1";input.min="1";}
 }
 
 function updateSubtotalPreview(){
@@ -1524,70 +1419,10 @@ function updateSubtotalPreview(){
   const val=document.getElementById("jenis-sampah-select").value;
   if(val===""){prevEl.innerHTML='Subtotal: <b>Rp 0</b>';return;}
   updateJumlahInputStep();
-  const idx=Number(val)||0;
-  const j=jenisSampahList[idx];
+  const idx=Number(val)||0;const j=jenisSampahList[idx];
   const jumlah=parseFloat(document.getElementById("jumlah-sampah").value)||0;
   const subtotal=j?(jumlah*Number(j.harga)):0;
   prevEl.innerHTML=`Subtotal: <b>${formatRupiah(subtotal)}</b>`;
-}
-
-/* ============================================================
-   SCANNER QR
-   ============================================================ */
-function bukaKameraScan(){document.getElementById("camera-input").value="";document.getElementById("camera-input").click();}
-
-function resetScanFrame(){
-  const idle=document.getElementById("scan-frame-idle");
-  const wrap=document.getElementById("scan-preview-wrap");
-  if(idle)idle.classList.remove("hidden");
-  if(wrap)wrap.classList.add("hidden");
-  const status=document.getElementById("scan-status");
-  const preview=document.getElementById("scan-preview");
-  const input=document.getElementById("camera-input");
-  if(status)status.textContent="";
-  if(preview)preview.src="";
-  if(input)input.value="";
-}
-
-function prosesGambarQR(input){
-  const file=input.files&&input.files[0];
-  if(!file)return;
-  const reader=new FileReader();
-  reader.onload=function(e){
-    const previewWrap=document.getElementById("scan-preview-wrap");
-    const previewImg=document.getElementById("scan-preview");
-    const statusEl=document.getElementById("scan-status");
-    previewImg.src=e.target.result;
-    document.getElementById("scan-frame-idle").classList.add("hidden");
-    previewWrap.classList.remove("hidden");
-    statusEl.textContent="Memproses QR...";
-    const img=new Image();
-    img.onload=function(){
-      const canvas=document.createElement("canvas");
-      canvas.width=img.width;canvas.height=img.height;
-      const ctx=canvas.getContext("2d");
-      ctx.drawImage(img,0,0);
-      const imageData=ctx.getImageData(0,0,canvas.width,canvas.height);
-      if(window.jsQR){
-        const code=jsQR(imageData.data,imageData.width,imageData.height);
-        if(code){statusEl.textContent="QR berhasil dibaca!";handleQRResult(code.data);}
-        else{statusEl.textContent="QR tidak terbaca. Coba foto ulang dengan lebih jelas.";}
-      }else{statusEl.textContent="Library QR belum siap. Gunakan tab Cari Manual.";}
-    };
-    img.onerror=function(){statusEl.textContent="Gagal memuat gambar.";};
-    img.src=e.target.result;
-  };
-  reader.readAsDataURL(file);
-}
-
-async function handleQRResult(teks){
-  const parts=(teks||"").split("|");
-  if(parts.length!==3||parts[0]!=="MURID"){
-    document.getElementById("scan-status").textContent="Kode QR tidak valid.";return;
-  }
-  document.getElementById("scan-status").textContent="Mencari murid...";
-  await pilihMurid(parts[1],parts[2]);
-  resetScanFrame();
 }
 
 async function cariManual(){
@@ -1604,8 +1439,7 @@ async function pilihMurid(nama,kelas){
     document.getElementById("terpilih-nama").textContent=muridTerpilih.nama;
     document.getElementById("terpilih-kelas").textContent=muridTerpilih.kelas;
     document.getElementById("kartu-murid-terpilih").classList.remove("hidden");
-    document.getElementById("manual-nama").value="";
-    document.getElementById("manual-kelas").value="";
+    document.getElementById("manual-nama").value="";document.getElementById("manual-kelas").value="";
     showToast("Murid ditemukan: "+muridTerpilih.nama,"ok");
   }else{showToast("Murid tidak ditemukan. Pastikan sudah terdaftar.","err");}
 }
@@ -1613,38 +1447,25 @@ async function pilihMurid(nama,kelas){
 function resetMuridTerpilih(){muridTerpilih=null;document.getElementById("kartu-murid-terpilih").classList.add("hidden");}
 
 function tambahKeKeranjang(){
-  if(!jenisSampahList.length){showToast("Tambahkan jenis sampah dulu melalui menu Kelola Jenis.","err");return;}
+  if(!jenisSampahList.length){showToast("Tambahkan jenis sampah dulu.","err");return;}
   const val=document.getElementById("jenis-sampah-select").value;
   if(val===""){showToast("Pilih jenis sampah terlebih dahulu.","err");return;}
-  const idx=Number(val)||0;
-  const j=jenisSampahList[idx];
+  const idx=Number(val)||0;const j=jenisSampahList[idx];
   const jumlah=parseFloat(document.getElementById("jumlah-sampah").value)||0;
   if(!j){showToast("Pilih jenis sampah terlebih dahulu.","err");return;}
   if(jumlah<=0){showToast("Isi jumlah sampah lebih dari 0.","err");return;}
   const harga=Number(j.harga)||0;
-  /* FIX #6: Sertakan hargaSatuan secara eksplisit agar GAS tidak baca "UNDEFINED" */
-  keranjang.push({
-    jenis:j.nama,
-    satuan:j.satuan,
-    harga:harga,
-    hargaSatuan:harga,
-    jumlah:jumlah,
-    total:jumlah*harga
-  });
+  keranjang.push({jenis:j.nama,satuan:j.satuan,harga,hargaSatuan:harga,jumlah,total:jumlah*harga});
   document.getElementById("jumlah-sampah").value="";
-  updateSubtotalPreview();
-  renderKeranjang();
+  updateSubtotalPreview();renderKeranjang();
 }
 
 function hapusDariKeranjang(i){keranjang.splice(i,1);renderKeranjang();}
 
 function renderKeranjang(){
   const list=document.getElementById("keranjang-list");
-  if(!keranjang.length){
-    list.innerHTML='<div class="keranjang-empty">Keranjang masih kosong.</div>';
-  }else{
-    list.innerHTML=keranjang.map((it,i)=>`<div class="keranjang-item"><div class="ki-info"><div class="nm">${escapeHtml(it.jenis)}</div><div class="qty">${it.jumlah} ${escapeHtml(it.satuan)} × ${formatRupiah(it.harga)}</div></div><div class="ki-sub">${formatRupiah(it.total)}</div><button class="ki-del" onclick="hapusDariKeranjang(${i})" aria-label="Hapus">✕</button></div>`).join("");
-  }
+  if(!keranjang.length){list.innerHTML='<div class="keranjang-empty">Keranjang masih kosong.</div>';}
+  else{list.innerHTML=keranjang.map((it,i)=>`<div class="keranjang-item"><div class="ki-info"><div class="nm">${escapeHtml(it.jenis)}</div><div class="qty">${it.jumlah} ${escapeHtml(it.satuan)} × ${formatRupiah(it.harga)}</div></div><div class="ki-sub">${formatRupiah(it.total)}</div><button class="ki-del" onclick="hapusDariKeranjang(${i})">✕</button></div>`).join("");}
   const total=keranjang.reduce((s,it)=>s+it.total,0);
   document.getElementById("keranjang-total").textContent=formatRupiah(total);
 }
@@ -1658,23 +1479,13 @@ async function prosesSetor(){
   const btn=document.getElementById("btn-setor");
   setLoading(btn,true,"Menyimpan...","◉ Stempel & Simpan Setoran");
   const batchId="B"+Date.now();
-  /* FIX #7: Kirim items sebagai JSON string — dengan apiCall POST ini aman */
-  const res=await apiCall("setor",{
-    namaMurid:muridTerpilih.nama,
-    kelas:muridTerpilih.kelas,
-    namaPetugas:session.nama,
-    items:JSON.stringify(keranjang),
-    batchId
-  });
+  const res=await apiCall("setor",{namaMurid:muridTerpilih.nama,kelas:muridTerpilih.kelas,namaPetugas:session.nama,items:JSON.stringify(keranjang),batchId});
   setLoading(btn,false,"Menyimpan...","◉ Stempel & Simpan Setoran");
   if(res.status==="success"){
     logSesiPetugas.unshift({nama:muridTerpilih.nama,kelas:muridTerpilih.kelas,total:grandTotal,waktu:new Date()});
-    renderLogSesi();
-    tampilkanStamp(grandTotal,muridTerpilih.nama);
+    renderLogSesi();tampilkanStamp(grandTotal,muridTerpilih.nama);
     keranjang=[];renderKeranjang();resetMuridTerpilih();
-  }else if(res.message!=="network_error"){
-    showToast(res.message||"Gagal menyimpan setoran.","err");
-  }
+  }else if(res.message!=="network_error"){showToast(res.message||"Gagal menyimpan setoran.","err");}
 }
 
 function tampilkanStamp(total,namaMurid){
@@ -1691,9 +1502,7 @@ function tutupStamp(){document.getElementById("overlay-stamp").classList.add("hi
 
 function renderLogSesi(){
   const el=document.getElementById("riwayat-petugas-list");
-  if(!logSesiPetugas.length){
-    el.innerHTML='<div class="keranjang-empty">Belum ada setoran tercatat pada sesi ini.</div>';return;
-  }
+  if(!logSesiPetugas.length){el.innerHTML='<div class="keranjang-empty">Belum ada setoran tercatat pada sesi ini.</div>';return;}
   el.innerHTML=logSesiPetugas.map(l=>`<div class="mini-log-item"><span><b>${escapeHtml(l.nama)}</b> · ${escapeHtml(l.kelas)}</span><span>${formatRupiah(l.total)}</span></div>`).join("");
 }
 
@@ -1705,18 +1514,14 @@ function bukaHalamanKelolaJenis(){bukaHalaman("page-kelola-jenis");renderTabelKe
 function renderTabelKelolaJenis(){
   const body=document.getElementById("tabel-jenis-body");
   if(!body)return;
-  if(!jenisSampahList.length){
-    body.innerHTML='<div class="empty-state" style="padding:16px 0;">Belum ada jenis sampah. Tambahkan di bawah.</div>';return;
-  }
+  if(!jenisSampahList.length){body.innerHTML='<div class="empty-state" style="padding:16px 0;">Belum ada jenis sampah. Tambahkan di bawah.</div>';return;}
   body.innerHTML=jenisSampahList.map((j,i)=>`
     <div class="jenis-row" data-asli="${escapeHtml(j.nama)}">
       <input type="text" value="${escapeHtml(j.nama)}" id="jr-nama-${i}">
       <select id="jr-satuan-${i}"><option value="pcs"${j.satuan==="pcs"?" selected":""}>pcs</option><option value="kg"${j.satuan==="kg"?" selected":""}>kg</option></select>
       <input type="number" value="${Number(j.harga)||0}" id="jr-harga-${i}" min="0">
       <div style="display:flex;gap:4px;">
-        <button class="icon-btn" style="width:32px;height:32px;" title="Simpan" onclick="simpanBarisJenis(${i})">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-        </button>
+        <button class="icon-btn" style="width:32px;height:32px;" title="Simpan" onclick="simpanBarisJenis(${i})"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></button>
         <button class="del-btn" title="Hapus" onclick="hapusBarisJenis('${escapeHtml(j.nama).replace(/'/g,"\\'")}')">✕</button>
       </div>
     </div>`).join("");
@@ -1729,16 +1534,14 @@ async function simpanBarisJenis(i){
   const hargaBaru=document.getElementById("jr-harga-"+i).value;
   if(!namaBaru||!hargaBaru){showToast("Nama dan harga tidak boleh kosong.","err");return;}
   const res=await apiCall("simpan_jenis_sampah",{namaAsli:j.nama,nama:namaBaru,satuan:satuanBaru,harga:hargaBaru});
-  if(res.status==="success"){showToast("Jenis sampah disimpan.","ok");await muatJenisSampah();}
-  else showToast(res.message||"Gagal menyimpan.","err");
+  if(res.status==="success"){showToast("Jenis sampah disimpan.","ok");await muatJenisSampah();}else showToast(res.message||"Gagal menyimpan.","err");
 }
 
 async function hapusBarisJenis(nama){
   const ok=await showConfirm("Hapus Jenis Sampah","Hapus \""+nama+"\" dari daftar harga?");
   if(!ok)return;
   const res=await apiCall("hapus_jenis_sampah",{nama});
-  if(res.status==="success"){showToast("Jenis sampah dihapus.","ok");await muatJenisSampah();}
-  else showToast(res.message||"Gagal menghapus.","err");
+  if(res.status==="success"){showToast("Jenis sampah dihapus.","ok");await muatJenisSampah();}else showToast(res.message||"Gagal menghapus.","err");
 }
 
 async function tambahJenisBaru(){
@@ -1748,12 +1551,8 @@ async function tambahJenisBaru(){
   if(!nama||!harga){showToast("Isi nama dan harga jenis sampah.","err");return;}
   if(Number(harga)<=0){showToast("Harga harus lebih dari 0.","err");return;}
   const res=await apiCall("simpan_jenis_sampah",{namaAsli:"",nama,satuan,harga});
-  if(res.status==="success"){
-    document.getElementById("new-jenis-nama").value="";
-    document.getElementById("new-jenis-harga").value="";
-    showToast("Jenis sampah baru ditambahkan.","ok");
-    await muatJenisSampah();
-  }else{showToast(res.message||"Gagal menambahkan.","err");}
+  if(res.status==="success"){document.getElementById("new-jenis-nama").value="";document.getElementById("new-jenis-harga").value="";showToast("Jenis sampah baru ditambahkan.","ok");await muatJenisSampah();}
+  else{showToast(res.message||"Gagal menambahkan.","err");}
 }
 
 /* ============================================================
@@ -1765,15 +1564,7 @@ function iconCup(){return'<svg viewBox="0 0 24 24" fill="none" stroke="currentCo
 function iconPaper(){return'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg>';}
 function iconCan(){return'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="5" rx="7" ry="3"/><path d="M5 5v14c0 1.7 3.1 3 7 3s7-1.3 7-3V5"/></svg>';}
 function iconGlass(){return'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 2h8l1 6a5 5 0 0 1-10 0Z"/><path d="M12 13v9M8 22h8"/></svg>';}
-function iconForType(nama){
-  const n=(nama||"").toLowerCase();
-  if(n.includes("botol kaca")||n.includes("kaca"))return iconGlass();
-  if(n.includes("botol"))return iconBottle();
-  if(n.includes("gelas"))return iconCup();
-  if(n.includes("kertas")||n.includes("kardus")||n.includes("kemasan")||n.includes("sachet"))return iconPaper();
-  if(n.includes("kaleng")||n.includes("logam"))return iconCan();
-  return iconLeaf();
-}
+function iconForType(nama){const n=(nama||"").toLowerCase();if(n.includes("botol kaca")||n.includes("kaca"))return iconGlass();if(n.includes("botol"))return iconBottle();if(n.includes("gelas"))return iconCup();if(n.includes("kertas")||n.includes("kardus")||n.includes("kemasan")||n.includes("sachet"))return iconPaper();if(n.includes("kaleng")||n.includes("logam"))return iconCan();return iconLeaf();}
 function iconRecycleSmall(){return'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 19H4a2 2 0 0 1-1.7-3l2-3.3M11 5h6.5a2 2 0 0 1 1.7 3L18 11M14 19h4.5a2 2 0 0 0 1.7-3L19 13"/><path d="m9 9 3-3 3 3M5 13.5 7 19l5.5-1.5M19 11l-2 5.5-5.5-1.5"/></svg>';}
 
 /* ============================================================
@@ -1782,17 +1573,38 @@ function iconRecycleSmall(){return'<svg viewBox="0 0 24 24" fill="none" stroke="
 (function loadJsQR(){
   const s=document.createElement("script");
   s.src="https://cdnjs.cloudflare.com/ajax/libs/jsQR/1.4.0/jsQR.min.js";
-  s.async=true;
-  document.head.appendChild(s);
+  s.async=true;document.head.appendChild(s);
 })();
 
 /* ============================================================
-   INISIALISASI
+   INISIALISASI + AUTO LOGIN
    ============================================================ */
 (function init(){
-  if(!isUrlConfigured())bukaHalaman("page-setup");
-  else bukaHalaman("page-landing");
+  if(!isUrlConfigured()){bukaHalaman("page-setup");return;}
+  // Coba restore sesi dari localStorage
+  if(muatSesiTersimpan()){
+    const r=session.role;
+    if(r==="murid")masukDashboardMurid();
+    else if(r==="petugas")masukDashboardPetugas();
+    else if(r==="admin")masukDashboardAdmin();
+    else bukaHalaman("page-landing");
+  }else{
+    bukaHalaman("page-landing");
+  }
 })();
 </script>
+
+<!-- FOOTER HAK CIPTA -->
+<footer class="site-footer">
+  <div class="footer-logo">TrashToCash</div>
+  <div class="footer-copy">
+    &copy; 2026 Hanif Ahmad. All Rights Reserved.
+    <span class="footer-divider">·</span>
+    
+    <br>
+    Dibuat dengan ♻️ untuk lingkungan sekolah yang lebih bersih
+  </div>
+
+</footer>
 </body>
 </html>
